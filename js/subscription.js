@@ -1,4 +1,8 @@
 window.addEventListener('load', () => {
+    if (!window.matchMedia('(orientation: portrait)').matches) {
+        document.querySelector('.subscription-inner-wrapper').classList.add('subscription-inner-wrapper-shifted');
+    }
+
     document.addEventListener('click', event => {
         if (event.target.closest('.subscription-button')) {
             document.querySelector('.subscription-inner-wrapper').classList.add('subscription-inner-wrapper-shifted');

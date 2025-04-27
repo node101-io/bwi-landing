@@ -98,6 +98,7 @@ input[type=number] {
   --text-color: #2B0046;
   --button-background-color: #000;
   --pink-color: #ff83ee;
+  --light-pink-color: #FFB7F5;
   --why-color: #E600BC;
   --faq-background-color: #FAFFBF;
   --higlight-color: #E23DCB;
@@ -153,9 +154,11 @@ h6 {
 }
 
 @font-face {
-  font-family: "Marjorie";
-  src: url("/fonts/MarjorieTest-Regular.otf") format("opentype");
+  font-family: 'Marjorie';
+  font-style: normal;
   font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/Marjorie-Regular.woff2) format('woff2');
 }
 
 @font-face {
@@ -175,7 +178,7 @@ h6 {
 }
 
 .general-button {
-  background-color: var(--secondary-color);
+  background-color: var(--light-pink-color);
   position: relative;
   border: none;
   color: var(--background-color);

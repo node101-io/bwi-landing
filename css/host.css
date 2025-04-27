@@ -34,6 +34,7 @@
 
 .host-title-each-line-image {
     height: calc(var(--host-title-font-size) * .8);
+    border-radius: 5px;
 }
 
 .host-text {

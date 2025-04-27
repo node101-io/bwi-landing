@@ -46,14 +46,15 @@
     height: calc(var(--why-each-reason-title-font-size) * var(--why-each-reason-text-image-ratio));
     min-height: calc(var(--why-each-reason-title-font-size) * var(--why-each-reason-text-image-ratio));
     max-width: 0;
-    transition: max-width .3s ease-in-out, padding-right .3s ease-in-out;
+    transition: max-width .3s ease-in-out, margin-right .3s ease-in-out;
     object-fit: cover;
     padding-right: 0;
+    border-radius: 5px;
 }
 
 .why-each-reason:hover .why-each-reason-title-image {
     max-width: calc(var(--why-each-reason-title-font-size) * var(--why-each-reason-text-image-ratio) * 3.6);
-    padding-right: calc(var(--why-each-reason-title-font-size) / 3);
+    margin-right: calc(var(--why-each-reason-title-font-size) / 3);
 }
 
 .why-each-reason-separator {

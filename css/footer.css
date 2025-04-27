@@ -20,17 +20,26 @@ footer {
 
 .footer-bottom-wrapper {
     display: flex;
+    position: relative;
     justify-content: space-between;
     border-top: 1px solid #B7B7B7;
     width: 100dvw;
     min-width: 100dvw;
     padding: var(--page-vertical-padding) var(--page-horizontal-padding);
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
     font-size: var(--footer-bottom-text-font-size);
 }
 
 .footer-bottom-wrapper a {
+    text-align: center;
     text-decoration: none;
     color: var(--text-color);
     font-style: italic;
+}
+
+.footer-bottom-wrapper a:nth-child(2) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--page-vertical-padding);
 }
