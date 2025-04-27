@@ -106,6 +106,7 @@
 
 @media only screen and (min-width: 600px) {
     :root {
+        --why-title-font-size: 16px;
         --why-each-reason-title-font-size: 40px;
         --why-each-reason-responsive-max-width: 570px;
     }    
@@ -113,6 +114,7 @@
 
 @media only screen and (min-width: 800px) {
     :root {
+        --why-title-font-size: 18px;
         --why-each-reason-title-font-size: 50px;
         --why-each-reason-responsive-max-width: 720px;
     }    
@@ -120,6 +122,7 @@
 
 @media only screen and (min-width: 1000px) {
     :root {
+        --why-title-font-size: 22px;
         --why-each-reason-responsive-max-width: unset;
         --why-each-reason-title-font-size: 35px;
     }

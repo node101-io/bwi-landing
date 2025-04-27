@@ -1,7 +1,5 @@
 * {
   -webkit-font-smoothing: antialiased;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'Marjorie', Arial, sans-serif;
   cursor: url('/img/cursor.svg') 4 0, auto;  
@@ -29,7 +27,8 @@ body {
 }
 
 .all-wrapper {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: none;
   padding: var(--page-vertical-padding) var(--page-horizontal-padding);
 }
@@ -187,6 +186,13 @@ h6 {
   transition: color .2s;
   transition-delay: .2s;
   margin-top: var(--general-button-font-size);
+  text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   margin-bottom: var(--general-button-font-size);
 }
 

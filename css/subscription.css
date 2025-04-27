@@ -9,6 +9,11 @@
     --subscription-button-margin-bottom: 140px;
 }
 
+.subscription-wrapper {
+    position: relative;
+    z-index: 3;
+}
+
 .subscription-button {
     position: fixed;
     width: var(--subscription-button-width);
@@ -24,7 +29,6 @@
     font-style: italic;
     color: #FF4D00;
     font-size: var(--subscription-button-font-size);
-    z-index: 3;
     transform: rotate(-90deg);
     transform-origin: bottom left;
 }
@@ -44,7 +48,6 @@
     background-color: #FAFFF3;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 0px 12px;
     transition: left 0.5s;
-    z-index: 3;
 }
 .subscription-inner-wrapper-shifted {
     left: calc(100dvw - var(--subscription-inner-wrapper-width));

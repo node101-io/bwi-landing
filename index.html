@@ -19,6 +19,10 @@
     <script src="/js/faq.js" type="module"></script>
     <script src="/js/host.js" type="module"></script>
     <script src="/js/subscription.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/dragscroll@0.0.8/dragscroll.min.js"></script>
 </head>
 
 <body>
@@ -26,7 +30,7 @@
         <div class="header-responsive-each-side-wrapper">
             <a href="#about">About</a>
             <a href="#istanbul">Istanbul</a>
-            <a href="#faq">FAQ</a>    
+            <a href="#faq">FAQ</a>
         </div>
         <div class="header-logo-wrapper">
             <svg viewBox="0 0 90 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,28 +164,30 @@
         <div class="header-menu-wrapper">
             <div class="header-menu-each-line"></div>
             <div class="header-menu-each-line"></div>
-            <div class="header-responsive-menu-wrapper display-none">
-                <a href="#about">ABOUT</a>
-                <a href="#istanbul">ISTANBUL</a>
-                <a href="#schedule">SCHEDULE</a>
-                <a href="#faq">FAQ</a>
-                <a href="#host">HOST YOUR OWN EVENT</a>
-                <a href="https://x.com/buildersweekist" target="_blank">X</a>
-            </div>
         </div>
         <div class="header-responsive-each-side-wrapper">
             <a href="#schedule">Schedule</a>
-            <a class="general-button" style="margin: 0;" href="https://docs.google.com/forms/d/e/1FAIpQLSf_menDtzbLg7tF_hh2hLzAn0_Nq1GvY86V-K2FpLQj-vzz9A/viewform" target="_blank" id="host-button">
+            <a class="general-button" style="margin: 0;"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf_menDtzbLg7tF_hh2hLzAn0_Nq1GvY86V-K2FpLQj-vzz9A/viewform"
+                target="_blank" id="host-button">
                 Host Your Own Event
             </a>
         </div>
     </header>
     <div class="all-wrapper">
+        <div class="header-responsive-menu-wrapper display-none">
+            <a href="#about">ABOUT</a>
+            <a href="#istanbul">ISTANBUL</a>
+            <a href="#schedule">SCHEDULE</a>
+            <a href="#faq">FAQ</a>
+            <a href="#host">HOST YOUR OWN EVENT</a>
+            <a href="https://x.com/buildersweekist" target="_blank">X</a>
+        </div>
         <div class="subscription-wrapper">
             <button class="subscription-button">• Subscription</button>
             <div class="subscription-inner-wrapper">
                 <p>Bring your mail and stay in touch with Builders Week.</p>
-                <input class="subscription-email-input" placeholder="satoshi@booked.ist" type="email" >
+                <input class="subscription-email-input" placeholder="satoshi@booked.ist" type="email">
                 <button class="subscription-submit-button">• Submit</button>
             </div>
         </div>
@@ -242,12 +248,113 @@
             <p class="landing-text">
                 Check out the confirmed events:
             </p>
-            <button class="general-button" id="view-the-agenda-button">View the Agenda</button>
+            <a class="general-button" href="https://lu.ma/calendar/cal-DRj5IjZmE9bJV1C" target="_blank"
+                id="view-the-agenda-button">View the Agenda</a>
             <p class="schedule-drag-title">
                 ← Hold and drag schedule for more →
             </p>
-            <div class="schedule-table-wrapper">
-                <!-- TODO -->
+            <div class="schedule-tables-wrapper dragscroll">
+                <table class="schedule-table-wrapper">
+                    <thead>
+                        <tr>
+                            <th>Mon, Sept 1</th>
+                            <th>Tues, Sept 2</th>
+                            <th>Wed, Sept 3</th>
+                            <th>Thurs, Sept 4</th>
+                            <th>Fri, Sept 5</th>
+                            <th>Sat, Sept 6</th>
+                            <th>Sun, Sept 7</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/ethistanbul.png');">
+                                <h1>ETHIstanbul Conference</h1>
+                                <div class="schedule-item-location-wrapper">
+                                    <img src="/img/schedule/location.svg" alt="">
+                                    La Rural
+                                </div>
+                            </td>
+                            <td colspan="2" rowspan="1" style="background-image: url('/img/schedule/hackathon.png');">
+                                <h1>ETHIstanbul Hackathon</h1>
+                                <div class="schedule-item-location-wrapper">
+                                    <img src="/img/schedule/location.svg" alt="">
+                                    La Rural
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="schedule-table-wrapper">
+                    <thead>
+                        <tr>
+                            <th>Sun, Sept 14</th>
+                            <th>Mon, Sept 15</th>
+                            <th>Tues, Sept 16</th>
+                            <th>Wed, Sept 17</th>
+                            <th>Thurs, Sept 18</th>
+                            <th>Fri, Sept 19</th>
+                            <th>Sat, Sept 20</th>
+                            <th>Sun, Sept 21</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="8" rowspan="1" style="
+                                background: linear-gradient(90deg, rgba(255, 52, 0, 0.455) 40.72%, rgba(231, 178, 255, 0.07) 100%);
+                                background: linear-gradient(90deg, color(display-p3 1.000 0.302 0.000 / 0.455) 40.72%, color(display-p3 0.875 0.706 0.996 / 0.07) 100%);"
+                            >
+                                <h1>Math Village</h1>
+                                <div class="schedule-item-location-wrapper">
+                                    <img src="/img/schedule/location.svg" alt="">
+                                    İzmir, Şirince
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"></td>
+                        </tr>
+                    </tbody>
+                </table>    
             </div>
         </div>
         <div class="why-wrapper" id="istanbul">
@@ -266,7 +373,8 @@
                 <h3 class="why-each-reason-title">CLASS EVENTS</h3>
                 <h3 class="why-each-reason-title">&</h3>
                 <img class="why-each-reason-title-image" src="/img/why/1.png" alt="">
-                <h3 class="why-each-reason-title" style="margin-left: calc(-1 * var(--why-each-reason-title-font-size) / 3);">SPEAKERS</h3>
+                <h3 class="why-each-reason-title"
+                    style="margin-left: calc(-1 * var(--why-each-reason-title-font-size) / 3);">SPEAKERS</h3>
             </div>
             <div class="why-each-reason-separator"></div>
             <div class="why-each-reason-responsive">
@@ -278,7 +386,9 @@
             <div class="why-each-reason">
                 <h3 class="why-each-reason-title">HACKATHONS & </h3>
                 <img class="why-each-reason-title-image" src="/img/why/2.png" alt="">
-                <h3 class="why-each-reason-title" style="font-style: italic; margin-left: calc(-1 * var(--why-each-reason-title-font-size) / 3);">HANDS-ON</h3>
+                <h3 class="why-each-reason-title"
+                    style="font-style: italic; margin-left: calc(-1 * var(--why-each-reason-title-font-size) / 3);">
+                    HANDS-ON</h3>
                 <h3 class="why-each-reason-title">WORKSHOPS</h3>
             </div>
             <div class="why-each-reason-separator"></div>
@@ -291,9 +401,11 @@
                 <h3 class="why-each-reason-title">OPPORTUNITIES</h3>
             </div>
             <div class="why-each-reason why-each-reason-rotate-icon">
-                <img class="why-each-reason-title-image why-each-reason-responsive-title-image" src="/img/why/sun.svg" alt="">
+                <img class="why-each-reason-title-image why-each-reason-responsive-title-image" src="/img/why/sun.svg"
+                    alt="">
                 <h3 class="why-each-reason-title">INVESTMENT & NETWORKING OPPORTUNITIES</h3>
-                <img class="why-each-reason-title-image why-each-reason-responsive-title-image" src="/img/why/sun.svg" alt="">
+                <img class="why-each-reason-title-image why-each-reason-responsive-title-image" src="/img/why/sun.svg"
+                    alt="">
             </div>
             <div class="why-each-reason-separator"></div>
             <div class="why-each-reason-responsive">
@@ -307,7 +419,8 @@
             <div class="why-each-reason">
                 <h3 class="why-each-reason-title" style="font-style: italic;">SHOWCASE</h3>
                 <img class="why-each-reason-title-image" src="/img/why/3.png" alt="">
-                <h3 class="why-each-reason-title" style="margin-left: calc(-1 * var(--why-each-reason-title-font-size) / 3);">YOUR</h3>
+                <h3 class="why-each-reason-title"
+                    style="margin-left: calc(-1 * var(--why-each-reason-title-font-size) / 3);">YOUR</h3>
                 <h3 class="why-each-reason-title" style="font-style: italic;">PROJECT</h3>
             </div>
         </div>

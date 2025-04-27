@@ -45,12 +45,6 @@ header a {
     height: var(--header-logo-height);
     min-height: var(--header-logo-height);
 }
-.header-logo-wrapper:hover .header-logo-each-letter {
-    max-width: 40px;
-}
-.header-logo-wrapper:hover .header-logo-each-first-letter {
-    margin-left: calc(var(--header-logo-font-size) / 2);
-}
 
 .header-logo-each-first-letter {
     max-width: 40px !important;
@@ -153,3 +147,13 @@ header a {
         justify-content: center;
     }
 }
+
+@media only screen and (min-width: 1000px) {
+    .header-logo-wrapper:hover .header-logo-each-letter {
+        max-width: 40px;
+    }
+    .header-logo-wrapper:hover .header-logo-each-first-letter {
+        margin-left: calc(var(--header-logo-font-size) / 2);
+    }
+}
+
