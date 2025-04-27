@@ -1,0 +1,12 @@
+:root {
+    --schedule-drag-title-font-size: 16px;
+}
+
+.schedule-drag-title {
+    color: var(--pink-color);
+    font-style: italic;
+    font-size: var(--schedule-drag-title-font-size);
+    text-align: center;
+    margin-top: calc(var(--schedule-drag-title-font-size) * 4);
+    margin-bottom: calc(var(--schedule-drag-title-font-size) * 4);
+}

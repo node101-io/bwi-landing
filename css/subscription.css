@@ -1,0 +1,78 @@
+:root {
+    --subscription-button-height: 130px;
+    --subscription-button-width: 40px;
+    --subscription-button-font-size: 16px;
+    --subscription-inner-wrapper-width: 300px;
+    --subscription-inner-wrapper-padding: 24px;
+    --subscription-inner-wrapper-text-font-size: 18px;
+    --subscription-inner-wrapper-input-font-size: 14px;
+    --subscription-button-margin-bottom: 140px;
+}
+
+.subscription-button {
+    position: fixed;
+    width: var(--subscription-button-width);
+    min-width: var(--subscription-button-width);
+    height: var(--subscription-button-height);
+    min-height: var(--subscription-button-height);
+    background-color: var(--secondary-color);
+    right: 0;
+    bottom: 140px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    writing-mode: sideways-lr;
+    text-orientation: sideways-right;
+    font-style: italic;
+    color: #FF4D00;
+    font-size: var(--subscription-button-font-size);
+    z-index: 3;
+}
+
+.subscription-inner-wrapper {
+    position: fixed;
+    left: 100dvw;
+    bottom: calc(var(--subscription-button-margin-bottom) - (190px - var(--subscription-button-height)) / 2);
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    gap: calc(var(--subscription-inner-wrapper-padding) / 2);
+    padding: var(--subscription-inner-wrapper-padding);
+    width: var(--subscription-inner-wrapper-width);
+    min-width: var(--subscription-inner-wrapper-width);
+    background-color: #FAFFF3;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 0px 12px;
+    transition: left 0.5s;
+    z-index: 3;
+}
+.subscription-inner-wrapper-shifted {
+    left: calc(100dvw - var(--subscription-inner-wrapper-width));
+}
+
+.subscription-inner-wrapper p {
+    font-style: italic;
+    font-size: var(--subscription-inner-wrapper-text-font-size);
+}
+
+.subscription-inner-wrapper input {
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    padding: calc(var(--subscription-inner-wrapper-input-font-size) / 2);
+    color: var(--text-color);
+}
+
+.subscription-inner-wrapper input::placeholder {
+    color: #DDD;
+}
+
+.subscription-inner-wrapper button {
+    font-size: var(--subscription-inner-wrapper-input-font-size);
+    font-style: italic;
+    color: #FF4D00;
+    padding: calc(var(--subscription-inner-wrapper-input-font-size) / 2) var(--subscription-inner-wrapper-input-font-size);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+    width: fit-content;
+}

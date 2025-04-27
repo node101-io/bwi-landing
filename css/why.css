@@ -1,0 +1,50 @@
+:root {
+    --why-title-font-size: 14px;
+    --why-each-reason-title-image-height: 40px;
+    --why-each-reason-title-font-size: 26px;
+}
+
+.why-wrapper {
+    margin-bottom: 100px;
+}
+
+.why-title {
+    font-family: 'Apfel Grotezk', sans-serif;
+    font-size: var(--why-title-font-size);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.why-each-reason {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-each-reason-title {
+    width: fit-content;
+    color: var(--why-color);
+    font-size: var(--why-each-reason-title-font-size);;
+}
+
+.why-each-reason-title-image {
+    display: none;
+    height: var(--why-each-reason-title-image-height);
+    min-height: var(--why-each-reason-title-image-height);
+}
+
+.why-each-reason:hover .why-each-reason-title-image {
+    display: block;
+}
+
+.why-each-reason-separator {
+    background-color: var(--why-color);
+    margin-left: calc(-1 * var(--page-horizontal-padding));
+    width: 100dvw;
+    min-width: 100dvw;
+    height: 1px;
+    min-height: 1px;
+    margin-top: var(--why-each-reason-title-font-size);
+    margin-bottom: var(--why-each-reason-title-font-size);
+}

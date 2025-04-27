@@ -1,0 +1,109 @@
+:root {
+    --host-title-font-size: 52px;
+    --host-trail-box-dot-size: 7px;
+    --host-trail-box-background-color: #220700;
+}
+
+.host-wrapper {
+    display: flex;
+    width: 100dvw;
+    min-width: 100dvw;
+    margin-left: calc(-1 * var(--page-horizontal-padding));
+    flex-direction: column;
+    align-items: center;
+    padding: var(--page-vertical-padding) var(--page-horizontal-padding);
+    padding-bottom: 0;
+}
+
+.host-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--host-title-font-size);
+}
+
+.host-title-each-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--host-title-font-size);
+    gap: calc(var(--host-title-font-size) / 5)
+}
+.host-title-each-line-responsive {
+    display: none;
+}
+
+.host-title-each-line-image {
+    height: calc(var(--host-title-font-size) * .8);
+}
+
+.host-text {
+    font-style: italic;
+    text-align: center;
+    margin: calc(var(--host-title-font-size) / 2) 0;
+}
+
+.host-trail-box {
+    position: absolute;
+    width: fit-content;
+    min-width: fit-content;
+    height: fit-content;
+    min-height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    pointer-events: none;
+    gap: var(--host-trail-box-dot-size);
+    padding: calc(var(--host-trail-box-dot-size) / 2) calc(var(--host-trail-box-dot-size) * 2);
+    border-radius: var(--host-trail-box-dot-size);
+    font-style: italic;
+    transform-origin: center center;
+    animation: hostTrailFadeScale 0.5s ease-out forwards;  
+}
+
+@keyframes hostTrailFadeScale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0px);
+        }
+    100% {
+        transform: scale(0.2);
+        opacity: 0;
+        filter: blur(5px);
+        }
+  }
+  
+.host-trail-box div {
+    width: var(--host-trail-box-dot-size);
+    min-width: var(--host-trail-box-dot-size);
+    height: var(--host-trail-box-dot-size);
+    min-height: var(--host-trail-box-dot-size);
+    background-color: var(--host-trail-box-background-color);
+    border-radius: 2px;
+}
+
+@media only screen and (min-width: 600px) {
+    :root {
+        --host-title-font-size: 80px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    :root {
+        --host-title-font-size: 100px;
+    }
+
+    .host-title-each-line-responsive {
+        display: flex !important;
+    }
+    .host-title-each-line:first-child {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    :root {
+        --host-title-font-size: 130px;
+    }
+}
