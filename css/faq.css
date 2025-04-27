@@ -88,12 +88,13 @@
     border: none;
     background: transparent;
     display: flex;
+    padding: 0;
 }
 
 .faq-each-question-top-button-wrapper::before {
     content: '';
     display: flex;
-    position: absolute;
+    position: relative;
     top: calc(50% - var(--faq-each-question-top-button-line-width) / 2);
     left: 0;
     width: var(--faq-each-question-top-button-line-height);
