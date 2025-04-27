@@ -15,6 +15,7 @@ footer {
     font-style: italic;
     text-align: center;
     color: var(--higlight-color);
+    padding: 0 var(--page-horizontal-padding);
 }
 
 .footer-bottom-wrapper {
