@@ -105,7 +105,7 @@
     content: '';
     display: flex;
     position: absolute;
-    left: calc(50% - var(--faq-each-question-top-button-line-width) / 2);
+    right: calc(50% - var(--faq-each-question-top-button-line-width) / 2);
     top: calc(50% - var(--faq-each-question-top-button-line-height) / 2);
     height: var(--faq-each-question-top-button-line-height);
     width: var(--faq-each-question-top-button-line-width);
