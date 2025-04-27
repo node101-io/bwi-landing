@@ -16,25 +16,28 @@ const BOXES = [
     { text: 'code', color: '#A034D5' },
     { text: 'future', color: '#ACFF49' }
 ];
+const TIME_THRESHOLD = 2000;
+const DISTANCE_THRESHOLD_SQUARE = 3000;
 
 window.addEventListener('load', () => {
     let lastX = null;
     let lastY = null;
+    let lastBoxTime = 0;
 
     const wrapper = document.querySelector('.host-wrapper');
+
     wrapper.addEventListener('mousemove', (e) => {
         const x = e.pageX;
         const y = e.pageY;
+        const currentTime = Date.now(); // Şu anki zamanı al
 
-        // 80px'den fazla uzaklaşınca yeni box oluştur
-        if (
-            lastX === null ||
-            (x - lastX) * (x - lastX) + (y - lastY) * (y - lastY) >= 3000
-        ) {
+        const distSq = lastX === null ? Infinity : (x - lastX) * (x - lastX) + (y - lastY) * (y - lastY);
+
+        if (distSq >= DISTANCE_THRESHOLD_SQUARE || currentTime - lastBoxTime >= TIME_THRESHOLD) {
             lastX = x;
             lastY = y;
+            lastBoxTime = currentTime;
 
-            // Rastgele bir text+color seç
             const { text, color } =
                 BOXES[Math.floor(Math.random() * BOXES.length)];
 
@@ -50,7 +53,6 @@ window.addEventListener('load', () => {
 
             document.body.appendChild(box);
 
-            // 500ms sonra animasyon bitene kadar ekranda kalıp sonra sil
             setTimeout(() => box.remove(), 500);
         }
     });
