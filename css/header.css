@@ -120,13 +120,8 @@ header a {
     gap: calc(var(--header-height) / 2);
 }
 
-.header-responsive-each-side-wrapper > a {
+.header-responsive-each-side-each-link {
     color: #666;
-    font-style: italic;
-}
-
-.header-responsive-each-side-wrapper > .general-button {
-    color: var(--background-color);
     font-style: italic;
 }
 
