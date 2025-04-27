@@ -2,10 +2,15 @@
     --why-title-font-size: 14px;
     --why-each-reason-title-image-height: 40px;
     --why-each-reason-title-font-size: 26px;
+    --why-each-reason-responsive-max-width: 360px;
+    --why-each-reason-text-image-ratio: 1.6;
 }
 
 .why-wrapper {
     margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .why-title {
@@ -18,8 +23,11 @@
 
 .why-each-reason {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    gap: calc(var(--why-each-reason-title-font-size) / 3);
+    height: calc(var(--why-each-reason-title-font-size) * var(--why-each-reason-text-image-ratio));
+    min-height: calc(var(--why-each-reason-title-font-size) * var(--why-each-reason-text-image-ratio));
 }
 
 .why-each-reason-title {
@@ -27,26 +35,124 @@
     width: -moz-fit-content;
     width: fit-content;
     color: var(--why-color);
-    font-size: var(--why-each-reason-title-font-size);;
+    font-size: var(--why-each-reason-title-font-size);
+    display: flex;
+    align-items: center;
+    gap: calc(var(--why-each-reason-title-font-size) / 4);
 }
 
 .why-each-reason-title-image {
-    display: none;
-    height: var(--why-each-reason-title-image-height);
-    min-height: var(--why-each-reason-title-image-height);
+    height: calc(var(--why-each-reason-title-font-size) * var(--why-each-reason-text-image-ratio));
+    min-height: calc(var(--why-each-reason-title-font-size) * var(--why-each-reason-text-image-ratio));
+    max-width: 0;
+    transition: max-width .3s ease-in-out, padding-right .3s ease-in-out;
+    object-fit: cover;
+    padding-right: 0;
 }
 
 .why-each-reason:hover .why-each-reason-title-image {
-    display: block;
+    max-width: calc(var(--why-each-reason-title-font-size) * var(--why-each-reason-text-image-ratio) * 3.6);
+    padding-right: calc(var(--why-each-reason-title-font-size) / 3);
 }
 
 .why-each-reason-separator {
     background-color: var(--why-color);
-    margin-left: calc(-1 * var(--page-horizontal-padding));
     width: 100dvw;
     min-width: 100dvw;
     height: 1px;
     min-height: 1px;
     margin-top: var(--why-each-reason-title-font-size);
     margin-bottom: var(--why-each-reason-title-font-size);
+}
+
+.why-each-reason-responsive {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: calc(var(--why-each-reason-title-font-size) / 2);
+    justify-content: center;
+    max-width: var(--why-each-reason-responsive-max-width);
+}
+.why-each-reason-responsive + .why-each-reason {
+    display: none;
+}
+.why-each-reason-responsive-title-image {
+    height: var(--why-each-reason-title-font-size);
+    min-height: var(--why-each-reason-title-font-size);
+}
+
+.why-each-reason-rotate-icon .why-each-reason-responsive-title-image {
+    -webkit-animation: spin 10s linear infinite;
+            animation: spin 10s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    :root {
+        --why-each-reason-title-font-size: 40px;
+        --why-each-reason-responsive-max-width: 570px;
+    }    
+}
+
+@media only screen and (min-width: 800px) {
+    :root {
+        --why-each-reason-title-font-size: 50px;
+        --why-each-reason-responsive-max-width: 720px;
+    }    
+}
+
+@media only screen and (min-width: 1000px) {
+    :root {
+        --why-each-reason-responsive-max-width: unset;
+        --why-each-reason-title-font-size: 35px;
+    }
+
+    .why-each-reason-responsive {
+        display: none;
+    }
+
+    .why-each-reason-responsive + .why-each-reason {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    :root {
+        --why-each-reason-title-font-size: 39px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    :root {
+        --why-each-reason-title-font-size: 42px;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    :root {
+        --why-each-reason-title-font-size: 46px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    :root {
+        --why-each-reason-title-font-size: 50px;
+    }
 }
