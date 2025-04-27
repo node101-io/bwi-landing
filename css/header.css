@@ -150,5 +150,6 @@ header a {
         left: 0;
         right: 0;
         justify-self: center;
+        justify-content: center;
     }
 }
