@@ -4,7 +4,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'Marjorie', Arial, sans-serif;
-  cursor: url('/img/cursor.svg') 4 0, auto;
+  cursor: url('/img/cursor.svg') 4 0, auto;  
 }
 
 html {
@@ -216,4 +216,9 @@ h6 {
 
 .general-button:hover:after {
   top: 100%;
+}
+
+.scale-on-scroll {
+  transform-origin: center center;
+  will-change: transform;
 }
