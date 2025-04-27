@@ -109,7 +109,8 @@ header a {
     left: 0;
     right: 0;
     background-color: var(--secondary-color);
-    gap: var(--header-responsive-menu-gap)
+    gap: var(--header-responsive-menu-gap);
+    z-index: 10;
 }
 
 .header-responsive-menu-wrapper a {
