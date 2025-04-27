@@ -42,6 +42,8 @@
 }
 
 .landing-title-each-line {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -50,7 +52,8 @@
     min-width: min(100%, 720px);
     border-radius: 10px;
     aspect-ratio: 1;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     margin-top: 20px;
     margin-bottom: 20px;
     align-self: center;
@@ -63,7 +66,8 @@
     min-height: var(--landing-image-full-height);
     justify-self: center;
     align-self: center;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     margin-top: calc(var(--landing-title-font-size) * 2);
     margin-bottom: calc(var(--landing-title-font-size) * 2);
 }
@@ -100,9 +104,12 @@
 }
 
 .landing-sponsors-wrapper[data-animated="true"] .landing-sponsors-inner-wrapper {
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+    -webkit-animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+            animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
 }
 
 .landing-sponsors-wrapper[data-direction="right"] {
@@ -115,6 +122,12 @@
 
 .landing-sponsors-wrapper {
     --_animation-duration: 50s;
+}
+
+@-webkit-keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 1rem));
+    }
 }
 
 @keyframes scroll {

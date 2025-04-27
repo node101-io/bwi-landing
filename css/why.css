@@ -23,6 +23,8 @@
 }
 
 .why-each-reason-title {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     color: var(--why-color);
     font-size: var(--why-each-reason-title-font-size);;
