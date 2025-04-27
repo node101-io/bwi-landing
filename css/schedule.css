@@ -49,7 +49,7 @@
 }
 
 .schedule-table-wrapper thead tr th {
-    font-family: 'Roboco', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: var(--schedule-head-font-color);
     padding-left: var(--schedule-head-font-size);
