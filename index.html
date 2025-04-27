@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -15,8 +14,6 @@
     <meta name="msapplication-TileImage" content="/android-chrome-192x192.png" />
     <title>Builders Week Istanbul</title>
     <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/landing.css">
     <link rel="stylesheet" href="/css/schedule.css">
     <link rel="stylesheet" href="/css/why.css">
     <link rel="stylesheet" href="/css/faq.css">
@@ -29,11 +26,348 @@
     <script src="/js/host.js" type="module"></script>
     <script src="/js/subscription.js" type="module"></script>
     <script src="/js/fade.js" type="module"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/dragscroll@0.0.8/dragscroll.min.js"></script>
+    <script src="/js/dragscroll.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- header.css -->
+    <style>
+:root {
+    --header-vertical-padding: 12px;
+    --header-horizontal-padding: 18px;
+    --header-height: 62px;
+    --header-logo-gap: 8px;
+    --header-logo-height: 38px;
+    --header-menu-wrapper-gap: 5px;
+    --header-menu-each-line-width: 34px;
+    --header-menu-each-line-height: 3px;
+    --header-logo-font-size: 20px;
+    --header-responsive-menu-gap: 30px;
+    --header-responsive-menu-font-size: 26px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-width: 100%;
+    height: var(--header-height);
+    min-height: var(--header-height);
+    padding: var(--header-vertical-padding) var(--header-horizontal-padding);
+    z-index: 3;
+    background-color: var(--background-color);
+}
+
+header a {
+    text-decoration: none;
+}
+
+.header-placeholder {
+    width: 100%;
+    min-width: 100%;
+    height: var(--header-height);
+    min-height: var(--header-height);
+    visibility: none;
+}
+
+.header-logo-wrapper {
+    display: flex;
+}
+.header-logo-wrapper svg {
+    margin-right: var(--header-logo-gap);
+    height: var(--header-logo-height);
+    min-height: var(--header-logo-height);
+}
+
+.header-logo-each-first-letter {
+    max-width: 40px !important;
+}
+
+.header-logo-each-letter {
+    display: flex;
+    overflow: hidden;
+    max-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    font-size: var(--header-logo-font-size);
+    font-weight: 600;
+    position: relative;
+    top: calc(var(--header-logo-font-size) / 5);
+    transition: max-width .4s ease, margin-left .4s ease;
+}
+
+.header-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--header-menu-wrapper-gap);
+}
+.header-menu-wrapper-toggled {
+    gap: 0;
+    --header-menu-each-line-width: 30px;
+    --header-menu-each-line-height: 2px;
+}
+.header-menu-wrapper-toggled .header-menu-each-line:nth-child(1) {
+    transform: rotate(-45deg);
+    margin-bottom: calc(-1 * var(--header-menu-each-line-height));
+}
+.header-menu-wrapper-toggled .header-menu-each-line:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.header-menu-each-line {
+    background-color: black;
+    height: var(--header-menu-each-line-height);
+    min-height: var(--header-menu-each-line-height);
+    width: var(--header-menu-each-line-width);
+    min-width: var(--header-menu-each-line-width);
+    border-radius: var(--header-menu-each-line-height);
+    transition: all .2s;
+}
+
+.header-responsive-menu-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--header-vertical-padding) var(--header-horizontal-padding);
+    top: var(--header-height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    gap: var(--header-responsive-menu-gap);
+    z-index: 10;
+}
+
+.header-responsive-menu-wrapper a {
+    font-size: var(--header-responsive-menu-font-size);
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.header-responsive-each-side-wrapper {
+    display: none;
+    align-items: center;
+    gap: calc(var(--header-height) / 2);
+}
+
+.header-responsive-each-side-each-link {
+    color: #666;
+    font-style: italic;
+}
+
+@media only screen and (min-width: 800px) {
+    .header-responsive-each-side-wrapper {
+        display: flex;
+    }
+    .header-menu-wrapper {
+        display: none;
+    }
+    .header-logo-wrapper {
+        position: fixed;
+        display: flex;
+        top: var(--header-vertical-padding);
+        left: 0;
+        right: 0;
+        justify-self: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .header-logo-wrapper:hover .header-logo-each-letter {
+        max-width: 40px;
+    }
+    .header-logo-wrapper:hover .header-logo-each-first-letter {
+        margin-left: calc(var(--header-logo-font-size) / 2);
+    }
+}
+    </style>
+    <!-- landing.css -->
+    <style>
+:root {
+    --landing-title-font-size: 54px;
+    --landing-text-font-size: 18px;
+    --landing-date-font-size: 22px;
+    --landing-sponsors-each-sponsor-height: 20px;
+    --landing-image-full-height: 150px;
+}
+
+.landing-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-title-each-line {
+    font-size: var(--landing-title-font-size);
+    line-height: 1.2;
+    letter-spacing: calc(var(--landing-title-font-size) / 20);
+}
+
+.landing-text {
+    font-family: 'Apfel Grotezk', sans-serif;
+    font-size: var(--landing-text-font-size);
+    margin-top: calc(var(--landing-text-font-size) / 2);
+    margin-bottom: calc(var(--landing-text-font-size) / 2);
+}
+
+.landing-date {
+    font-family: 'Apfel Grotezk', sans-serif;
+    font-size: var(--landing-date-font-size);
+    text-align: end;
+    font-weight: 700;
+    letter-spacing: calc(var(--landing-date-font-size) / 20);
+    margin-top: var(--landing-date-font-size);
+    margin-bottom: var(--landing-date-font-size);
+}
+
+.landing-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: calc(var(--landing-title-font-size) / 2);
+}
+
+.landing-title-each-line {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.landing-image {
+    width: min(100%, 720px);
+    min-width: min(100%, 720px);
+    border-radius: 10px;
+    aspect-ratio: 1;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.landing-image-full {
+    width: 100dvw;
+    min-width: 100dvw;
+    height: var(--landing-image-full-height);
+    min-height: var(--landing-image-full-height);
+    justify-self: center;
+    align-self: center;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-top: calc(var(--landing-title-font-size) * 2);
+    margin-bottom: calc(var(--landing-title-font-size) * 2);
+}
+
+.landing-sponsors-wrapper {
+    width: 100dvw;
+    min-width: 100dvw;
+    max-width: 100dvw;
+    overflow-x: scroll;
+    display: flex;
+    scrollbar-width: none;
+    margin-left: calc(-1 * var(--page-horizontal-padding));
+}
+
+.landing-sponsors-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.landing-sponsors-each-sponsor {
+    height: var(--landing-sponsors-each-sponsor-height);
+    min-height: var(--landing-sponsors-each-sponsor-height);
+}
+
+.landing-sponsors-inner-wrapper {
+    align-items: center;
+    padding-block: var(--landing-title-font-size);
+    display: flex;
+    gap: calc(2 * var(--landing-sponsors-each-sponsor-height));
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.landing-sponsors-wrapper[data-animated="true"] {
+    overflow: hidden;
+}
+
+.landing-sponsors-wrapper[data-animated="true"] .landing-sponsors-inner-wrapper {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    flex-wrap: nowrap;
+    -webkit-animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.landing-sponsors-wrapper[data-direction="right"] {
+    --_animation-direction: reverse;
+}
+
+.landing-sponsors-wrapper[data-direction="left"] {
+    --_animation-direction: forwards;
+}
+
+.landing-sponsors-wrapper {
+    --_animation-duration: 50s;
+}
+
+@-webkit-keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 1rem));
+    }
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 1rem));
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .landing-image {
+        aspect-ratio: unset;
+    }
+
+    .landing-title-wrapper {
+        flex-direction: row;
+        gap: calc(var(--landing-title-font-size) / 4)
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #about {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    :root {
+        --landing-title-font-size: 60px;
+        --landing-text-font-size: 22px;
+        --landing-image-full-height: auto;
+    }
+
+    .landing-image {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .landing-image-full {
+        margin-left: 0;
+        border-radius: 10px;
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    :root {
+        --landing-title-font-size: 75px;
+    }
+}
+    </style>
 </head>
 
 <body>
