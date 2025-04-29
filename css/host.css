@@ -1,4 +1,5 @@
 :root {
+    --host-bottom-text-font-size: 14px;
     --host-title-font-size: 52px;
     --host-trail-box-dot-size: 7px;
     --host-trail-box-background-color: #220700;
@@ -12,7 +13,6 @@
     flex-direction: column;
     align-items: center;
     padding: var(--page-vertical-padding) var(--page-horizontal-padding);
-    padding-bottom: 0;
 }
 
 .host-title-wrapper {
@@ -41,6 +41,15 @@
     font-style: italic;
     text-align: center;
     margin: calc(var(--host-title-font-size) / 2) 0;
+}
+
+.host-bottom-text {
+    font-size: var(--host-bottom-text-font-size);
+    font-style: italic;
+    text-align: center;
+    color: var(--higlight-color);
+    padding: 0 var(--page-horizontal-padding);
+    margin-top: 100px;
 }
 
 .host-trail-box {
