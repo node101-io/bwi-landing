@@ -4,7 +4,10 @@
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   font-family: 'Marjorie', Arial, sans-serif;
-  cursor: url('/img/cursor.svg') 4 0, auto;  
+  /* cursor: -webkit-image-set(url('/img/cursor.svg') 2x) 4 0, none;  
+  cursor: url('/img/cursor.svg') 4 0, none;   */
+  cursor: url('/img/cursor/cursor@1x.svg') 4 3, pointer;
+	cursor: -webkit-image-set(url('/img/cursor/cursor@2x.svg') 2x) 4 3, pointer;
 }
 
 html {
