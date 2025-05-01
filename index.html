@@ -14,15 +14,6 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/android-chrome-192x192.png" />
     <title>Builders Week Istanbul</title>
-    <!-- header.js -->
-    <script>
-        document.addEventListener('click', event => {
-            if (event.target.closest('.header-menu-wrapper') || event.target.closest('.header-responsive-menu-wrapper')) {
-                document.querySelector('.header-responsive-menu-wrapper').classList.toggle('display-none');
-                document.querySelector('.header-menu-wrapper').classList.toggle('header-menu-wrapper-toggled');
-            }
-        });
-    </script>
     <!-- general.css -->
     <style>
         * {
@@ -729,6 +720,15 @@
     <script src="/js/fade.js" type="module"></script>
     <script src="/js/scaleonscroll.js" type="module"></script>
     <script src="/js/dragscroll.js" defer></script>
+    <!-- header.js -->
+    <script>
+        document.addEventListener('click', event => {
+            if (event.target.closest('.header-menu-wrapper') || event.target.closest('.header-responsive-menu-wrapper')) {
+                document.querySelector('.header-responsive-menu-wrapper').classList.toggle('display-none');
+                document.querySelector('.header-menu-wrapper').classList.toggle('header-menu-wrapper-toggled');
+            }
+        });
+    </script>
 </head>
 
 <body>
