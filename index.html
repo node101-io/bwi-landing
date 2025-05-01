@@ -14,13 +14,14 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="msapplication-TileImage" content="/android-chrome-192x192.png" />
     <title>Builders Week Istanbul</title>
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/schedule.css">
-    <link rel="stylesheet" href="/css/why.css">
-    <link rel="stylesheet" href="/css/faq.css">
-    <link rel="stylesheet" href="/css/host.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/subscription.css">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/schedule.css">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/why.css">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/faq.css">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/host.css">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/footer.css">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/subscription.css">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,600;1,600&display=swap" />
     <script src="/js/faq.js" type="module"></script>
     <script src="/js/trailboxanimation.js" type="module"></script>
     <script src="/js/subscription.js" type="module"></script>
@@ -36,6 +37,257 @@
             }
         });
     </script>
+    <!-- general.css -->
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            font-family: 'Marjorie', Arial, sans-serif;
+            font-weight: 400;
+            cursor: url('/img/cursor/cursor@1x.svg') 4 3, pointer;
+            cursor: -webkit-image-set(url('/img/cursor/cursor@2x.svg') 2x) 4 3, pointer;
+        }
+
+        html {
+            width: 100dvw;
+            height: 100dvh;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+            background-size: cover;
+            background: var(--background-color);
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0px;
+            padding: 0px;
+            height: 100dvh;
+            width: 100dvw;
+            background: var(--background-color);
+        }
+
+        .all-wrapper {
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: none;
+            padding: var(--page-vertical-padding) var(--page-horizontal-padding);
+        }
+
+        .all-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        input[type=search]::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        input[type=search]::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        input[type="search"]::-webkit-search-decoration,
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-results-button,
+        input[type="search"]::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        textarea,
+        input {
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            resize: none;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            appearance: textfield;
+            -moz-appearance: textfield;
+            -webkit-appearance: textfield;
+        }
+
+        :root {
+            /* --pointer-default-dark: url('/img/pointers/default-dark.svg') 4 0, auto;
+    --pointer-hand-dark: url('/img/pointers/hand-dark.svg') 6 0, auto;
+    --pointer-hand-light: url('/img/pointers/hand-light.svg') 6 0, auto;
+    --pointer-hand-drag-dark: url('/img/pointers/hand-drag-dark.svg') 6 0, auto;
+    --pointer-hand-drop-light: url('/img/pointers/hand-drop-light.svg') 6 0, auto;
+    --pointer-hand-explore-dark: url('/img/pointers/hand-explore-dark.svg') 6 0, auto;
+    --pointer-hand-explore-light: url('/img/pointers/hand-explore-light.svg') 6 0, auto;
+    --pointer-hand-stake-dark: url('/img/pointers/hand-stake-dark.svg') 6 0, auto;
+    --pointer-hand-stake-light: url('/img/pointers/hand-stake-light.svg') 6 0, auto; */
+
+            --page-horizontal-padding: 40px;
+            --page-vertical-padding: 20px;
+
+            --background-color: #FFF;
+            --secondary-color: #D8E7C3;
+            --text-color: #2B0046;
+            --button-background-color: #000;
+            --pink-color: #ff83ee;
+            --light-pink-color: #FFB7F5;
+            --why-color: #E600BC;
+            --faq-background-color: #FAFFBF;
+            --higlight-color: #E23DCB;
+
+            --general-button-font-size: 15px;
+            --general-button-background-circle-size: 400px;
+        }
+
+        .display-none {
+            display: none !important;
+        }
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        @media only screen and (min-width: 1920px) {
+            :root {
+                --page-horizontal-padding: calc((100dvw - 1920px) / 2 + 40px);
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            :root {
+                --page-horizontal-padding: 30px;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            :root {
+                --page-horizontal-padding: 20px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            :root {
+                --page-horizontal-padding: 15px;
+                --page-vertical-padding: 15px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            :root {
+                --page-horizontal-padding: 12px;
+                --page-vertical-padding: 12px;
+            }
+        }
+
+        @font-face {
+            font-family: 'Marjorie';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: url(/fonts/Marjorie-Regular.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Apfel Grotezk';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: url(/fonts/ApfelGrotezk-Regular.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Apfel Grotezk';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 700;
+            src: url(/fonts/ApfelGrotezk-Bold.woff2) format('woff2');
+        }
+
+        .general-button {
+            background-color: var(--light-pink-color);
+            position: relative;
+            border: none;
+            color: var(--background-color);
+            font-size: var(--general-button-font-size);
+            font-style: italic;
+            padding: calc(var(--general-button-font-size) / 2) var(--general-button-font-size);
+            z-index: 1;
+            overflow: hidden;
+            transition: color .2s;
+            transition-delay: .2s;
+            margin-top: var(--general-button-font-size);
+            text-decoration: none;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            min-width: -webkit-fit-content;
+            min-width: -moz-fit-content;
+            min-width: fit-content;
+            margin-bottom: var(--general-button-font-size);
+        }
+
+        .general-button:after {
+            content: '';
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: calc(-1 * var(--general-button-background-circle-size) / 8);
+            left: calc(50% - var(--general-button-background-circle-size) / 2);
+            display: inline-block;
+            width: var(--general-button-background-circle-size);
+            min-width: var(--general-button-background-circle-size);
+            height: var(--general-button-background-circle-size);
+            ;
+            min-height: var(--general-button-background-circle-size);
+            ;
+            border-radius: 100%;
+            background-color: var(--button-background-color);
+            z-index: -1;
+            transition: all .5s;
+            text-decoration: none;
+        }
+
+        .general-button:hover {
+            color: var(--button-background-color);
+        }
+
+        .general-button:hover:after {
+            top: 100%;
+        }
+
+        .scale-on-scroll {
+            transform-origin: center center;
+            will-change: transform;
+        }
+
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .fade-in-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
     <!-- header.css -->
     <style>
         :root {
@@ -370,12 +622,6 @@
             }
         }
     </style>
-    <link
-        rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,600;1,600&display=swap"
-        as="style"
-        onload="this.onload=null;this.rel='stylesheet'"
-    />
 </head>
 
 <body>
