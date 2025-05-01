@@ -1,25 +1,25 @@
-const BOXES = [
-    { text: 'hello!', color: '#D4E9BF' },
-    { text: "let's", color: '#D6B9FF' },
-    { text: '<3', color: '#84FFE3' },
-    { text: 'start now', color: '#FFD230' },
-    { text: 'ready?', color: '#FF9DF4' },
-    { text: 'okeyyy', color: '#36CFF6' },
-    { text: ':)', color: '#FF9B51' },
-    { text: 'hackathon', color: '#0F7' },
-    { text: 'conference', color: '#CE1CC5' },
-    { text: 'huh??', color: '#009E68' },
-    { text: 'a hacker??', color: '#F3FF3F' },
-    { text: "let's build", color: '#BD8DF8' },
-    { text: 'cats', color: '#FF3C05' },
-    { text: 'hack&build', color: '#FFD600' },
-    { text: 'code', color: '#A034D5' },
-    { text: 'future', color: '#ACFF49' }
-];
-const TIME_THRESHOLD = 2000;
-const DISTANCE_THRESHOLD_SQUARE = 3000;
-
 window.addEventListener('load', () => {
+    const BOXES = [
+        { text: 'hello!', color: '#D4E9BF' },
+        { text: "let's", color: '#D6B9FF' },
+        { text: '<3', color: '#84FFE3' },
+        { text: 'start now', color: '#FFD230' },
+        { text: 'ready?', color: '#FF9DF4' },
+        { text: 'okeyyy', color: '#36CFF6' },
+        { text: ':)', color: '#FF9B51' },
+        { text: 'hackathon', color: '#0F7' },
+        { text: 'conference', color: '#CE1CC5' },
+        { text: 'huh??', color: '#009E68' },
+        { text: 'a hacker??', color: '#F3FF3F' },
+        { text: "let's build", color: '#BD8DF8' },
+        { text: 'cats', color: '#FF3C05' },
+        { text: 'hack&build', color: '#FFD600' },
+        { text: 'code', color: '#A034D5' },
+        { text: 'future', color: '#ACFF49' }
+    ];
+    const TIME_THRESHOLD = 2000;
+    const DISTANCE_THRESHOLD_SQUARE = 3000;
+
     let lastX = null;
     let lastY = null;
     let lastBoxTime = 0;

@@ -21,12 +21,21 @@
     <link rel="stylesheet" href="/css/host.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/subscription.css">
-    <script src="/js/header.js" type="module"></script>
     <script src="/js/faq.js" type="module"></script>
-    <script src="/js/host.js" type="module"></script>
+    <script src="/js/trailboxanimation.js" type="module"></script>
     <script src="/js/subscription.js" type="module"></script>
     <script src="/js/fade.js" type="module"></script>
-    <script src="/js/dragscroll.js"></script>
+    <script src="/js/scaleonscroll.js" type="module"></script>
+    <script src="/js/dragscroll.js" defer></script>
+    <!-- header.js -->
+    <script>
+        document.addEventListener('click', event => {
+            if (event.target.closest('.header-menu-wrapper') || event.target.closest('.header-responsive-menu-wrapper')) {
+                document.querySelector('.header-responsive-menu-wrapper').classList.toggle('display-none');
+                document.querySelector('.header-menu-wrapper').classList.toggle('header-menu-wrapper-toggled');
+            }
+        });
+    </script>
     <!-- header.css -->
     <style>
         :root {
@@ -227,8 +236,12 @@
 
         .landing-title-each-line {
             font-size: var(--landing-title-font-size);
+            font-weight: 600;
             line-height: 1.2;
             letter-spacing: calc(var(--landing-title-font-size) / 20);
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
         }
 
         .landing-text {
@@ -253,12 +266,6 @@
             flex-direction: column;
             flex-wrap: wrap;
             margin-top: calc(var(--landing-title-font-size) / 2);
-        }
-
-        .landing-title-each-line {
-            width: -webkit-fit-content;
-            width: -moz-fit-content;
-            width: fit-content;
         }
 
         .landing-image {
@@ -363,6 +370,9 @@
             }
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 </head>
 
 <body>

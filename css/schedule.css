@@ -88,6 +88,7 @@
     font-size: var(--schedule-body-each-item-text-font-size);
     color: var(--background-color);
     font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
 .schedule-item-location-wrapper {
@@ -102,6 +103,7 @@
     width: -moz-fit-content;
     width: fit-content;
     font-family: 'Roboto', sans-serif;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: calc(var(--schedule-body-each-item-location-font-size) / 2);

@@ -1,11 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   font-family: 'Marjorie', Arial, sans-serif;
-  /* cursor: -webkit-image-set(url('/img/cursor.svg') 2x) 4 0, none;  
-  cursor: url('/img/cursor.svg') 4 0, none;   */
+  font-weight: 400;
   cursor: url('/img/cursor/cursor@1x.svg') 4 3, pointer;
 	cursor: -webkit-image-set(url('/img/cursor/cursor@2x.svg') 2x) 4 3, pointer;
 }
@@ -169,7 +166,7 @@ h6 {
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/apfel-grotezk@latest/latin-400-normal.woff2) format('woff2');
+  src: url(/fonts/ApfelGrotezk-Regular.woff2) format('woff2');
 }
 
 @font-face {
@@ -177,7 +174,7 @@ h6 {
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/apfel-grotezk@latest/latin-700-normal.woff2) format('woff2');
+  src: url(/fonts/ApfelGrotezk-Bold.woff2) format('woff2');
 }
 
 .general-button {
