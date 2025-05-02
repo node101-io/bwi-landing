@@ -29,7 +29,8 @@ window.addEventListener('load', () => {
                 if (!res || !('data' in res) || res.error)
                     return alert('Something went wrong!');
 
-                alert('Success!')
+                alert('Success!');
+                document.querySelector('.subscription-inner-wrapper').classList.remove('subscription-inner-wrapper-shifted');
             })
             .catch(err => {
                 console.error(err);
