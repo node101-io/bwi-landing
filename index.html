@@ -541,6 +541,19 @@
         }
 
         .landing-sponsors-wrapper {
+            width: 100dvw;
+            min-width: 100dvw;
+            overflow: hidden;
+            height: fit-content;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            min-height: fit-content;
+            min-height: -webkit-fit-content;
+            min-height: -moz-fit-content;
+            margin-left: calc(-1 * var(--page-horizontal-padding));
+        }
+
+        .landing-sponsors-inner-wrapper {
             width: fit-content;
             width: -webkit-fit-content;
             width: -moz-fit-content;
@@ -549,7 +562,6 @@
             min-width: -moz-fit-content;
             display: flex;
             scrollbar-width: none;
-            margin-left: calc(-1 * var(--page-horizontal-padding));
             padding-left: calc(2 * var(--landing-sponsors-each-sponsor-height));
             align-items: center;
             display: flex;
@@ -559,7 +571,7 @@
             padding-block: var(--landing-title-font-size);
         }
 
-        .landing-sponsors-wrapper::-webkit-scrollbar {
+        .landing-sponsors-inner-wrapper::-webkit-scrollbar {
             display: none;
         }
 
@@ -1013,54 +1025,56 @@
             </h2>
             <img class="landing-image scale-on-scroll fade-in-on-scroll" src="/img/galata.webp" alt="galata" fetchpriority="high">
             <div class="landing-sponsors-wrapper">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/bitcoin.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.6);" alt="Bitcoin">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cosmos.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="Cosmos">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cryptist.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ethistanbul.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/fuel.svg" alt="Fuel">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/modapalas.svg" alt="Modapalas">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ton.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/bitcoin.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.6);" alt="Bitcoin">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cosmos.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="Cosmos">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cryptist.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ethistanbul.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/fuel.svg" alt="Fuel">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/modapalas.svg" alt="Modapalas">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ton.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/bitcoin.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.6);" alt="Bitcoin">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cosmos.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="Cosmos">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cryptist.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ethistanbul.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/fuel.svg" alt="Fuel">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/modapalas.svg" alt="Modapalas">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ton.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/bitcoin.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.6);" alt="Bitcoin">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cosmos.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="Cosmos">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cryptist.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ethistanbul.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/fuel.svg" alt="Fuel">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/modapalas.svg" alt="Modapalas">
-                <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ton.svg"
-                    style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
+                <div class="landing-sponsors-inner-wrapper">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/bitcoin.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.6);" alt="Bitcoin">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cosmos.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="Cosmos">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cryptist.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ethistanbul.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/fuel.svg" alt="Fuel">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/modapalas.svg" alt="Modapalas">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ton.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/bitcoin.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.6);" alt="Bitcoin">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cosmos.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="Cosmos">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cryptist.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ethistanbul.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/fuel.svg" alt="Fuel">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/modapalas.svg" alt="Modapalas">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ton.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/bitcoin.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.6);" alt="Bitcoin">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cosmos.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="Cosmos">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cryptist.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ethistanbul.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/fuel.svg" alt="Fuel">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/modapalas.svg" alt="Modapalas">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ton.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/bitcoin.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.6);" alt="Bitcoin">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cosmos.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="Cosmos">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/cryptist.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ethistanbul.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/fuel.svg" alt="Fuel">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/modapalas.svg" alt="Modapalas">
+                    <img class="landing-sponsors-each-sponsor" src="/img/sponsors/ton.svg"
+                        style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
+                </div>
             </div>
             <div class="landing-title-wrapper fade-in-on-scroll" id="about">
                 <h1 class="landing-title-each-line">NEXT</h1>
