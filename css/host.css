@@ -24,7 +24,7 @@
 .host-title-each-line {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     font-size: var(--host-title-font-size);
     gap: calc(var(--host-title-font-size) / 5)
 }
