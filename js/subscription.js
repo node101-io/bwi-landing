@@ -26,16 +26,14 @@ window.addEventListener('load', () => {
         })
             .then(res => res.json())
             .then(res => {
-                // TODO: update ui
-                if (!res || !('data' in res) || res.error) {
-                    console.log('failed');
-                    return;
-                }
+                if (!res || !('data' in res) || res.error)
+                    return alert('Something went wrong!');
 
-                console.log('success', res.data)
+                alert('Success!')
             })
             .catch(err => {
-                console.error('failed', err)
+                console.error(err);
+                alert('Something went wrong!');
             });
     })
 });
