@@ -41,16 +41,16 @@ window.addEventListener('load', () => {
                 texts[0].style.maxHeight = '0px';
                 texts[0].style.opacity = '0';
         
-                submitButton.innerHTML = '🎉 You\'re in!';
+                submitButton.lastChild.textContent = '📬 Stay Tuned';
                 submitButton.setAttribute('disabled', '');
             })
             .catch(err => {
                 console.error(err);
-                submitButton.innerHTML = 'Oops!';
+                submitButton.lastChild.textContent = 'Oops!';
                 submitButton.classList.add('subscription-submit-button-error');
                 setTimeout(() => {
                     submitButton.classList.remove('subscription-submit-button-error');
-                    submitButton.innerHTML = '• Submit';
+                    submitButton.lastChild.textContent = 'Submit';
                     submitButton.removeAttribute('disabled');
                 }, 1000);
             });

@@ -632,6 +632,9 @@
 
         .subscription-button {
             position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: var(--subscription-button-width);
             min-width: var(--subscription-button-width);
             height: var(--subscription-button-height);
@@ -647,6 +650,16 @@
             font-size: var(--subscription-button-font-size);
             transform: rotate(-90deg);
             transform-origin: bottom left;
+        }
+        .subscription-button-icon {
+            display: flex;
+            border-radius: calc(var(--subscription-button-font-size) / 6);
+            background-color: #FF4D00;
+            width: calc(var(--subscription-button-font-size) / 2);
+            min-width: calc(var(--subscription-button-font-size) / 2);
+            height: calc(var(--subscription-button-font-size) / 2);
+            min-height: calc(var(--subscription-button-font-size) / 2);
+            margin-right: calc(var(--subscription-button-font-size) / 2);
         }
 
         .subscription-inner-wrapper {
@@ -741,6 +754,13 @@
             width: -webkit-fit-content;
             width: -moz-fit-content;
             width: fit-content;
+        }
+
+
+        .subscription-submit-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .subscription-submit-button-error {
@@ -939,12 +959,18 @@
             <a href="https://x.com/buildersweekist" target="_blank">X</a>
         </div>
         <div class="subscription-wrapper">
-            <button class="subscription-button">• Subscription</button>
+            <button class="subscription-button">
+                <span class="subscription-button-icon"></span>
+                Subscription
+            </button>
             <form class="subscription-inner-wrapper">
                 <p style="max-height: calc(var(--subscription-inner-wrapper-text-font-size) * 3);">Bring your mail and stay in touch with Builders Week.</p>
                 <p style="max-height: 0px;">You\'re on the list! Thanks for subscribing 🎉 <br><br> See you at Builders Week Istanbul, you\'ll hear from us soon with updates, resources, and ways to get involved.</p>
                 <input class="subscription-email-input" placeholder="vitalik@ethereum.org" type="email">
-                <button class="subscription-submit-button" type="submit">• Submit</button>
+                <button class="subscription-submit-button" type="submit">
+                    <span class="subscription-button-icon"></span>
+                    Submit
+                </button>
             </form>
         </div>
         <div class="landing-wrapper">
