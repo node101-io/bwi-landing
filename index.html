@@ -619,7 +619,7 @@
             --subscription-button-font-size: 16px;
             --subscription-inner-wrapper-width: 300px;
             --subscription-inner-wrapper-padding: 24px;
-            --subscription-inner-wrapper-text-font-size: 18px;
+            --subscription-inner-wrapper-text-font-size: 16px;
             --subscription-inner-wrapper-input-font-size: 14px;
             --subscription-button-margin-bottom: 140px;
         }
@@ -661,24 +661,47 @@
             width: var(--subscription-inner-wrapper-width);
             min-width: var(--subscription-inner-wrapper-width);
             background-color: #FAFFF3;
-            box-shadow: rgba(0, 0, 0, 0.1) -4px 0px 12px;
-            transition: left 0.5s;
+            transition: left 0.5s, box-shadow 0.5s;
         }
 
         .subscription-inner-wrapper-shifted {
             left: calc(100dvw - var(--subscription-inner-wrapper-width));
+            box-shadow: rgba(0, 0, 0, 0.1) -4px 0px 12px;
         }
 
         .subscription-inner-wrapper p {
             font-style: italic;
             font-size: var(--subscription-inner-wrapper-text-font-size);
+            color: #233D00;
+            overflow: hidden;
+            transition: max-height 0.2s;
+        }
+        .subscription-inner-wrapper p:disabled {
+            opacity: 0;
+            max-height: 0px !important;
         }
 
         .subscription-inner-wrapper input {
             border: 1px solid #DDD;
             border-radius: 4px;
+            font-size: var(--subscription-inner-wrapper-input-font-size);
+            line-height: 1;
             padding: calc(var(--subscription-inner-wrapper-input-font-size) / 2);
             color: var(--text-color);
+            overflow: hidden;
+            max-height: calc(var(--subscription-inner-wrapper-input-font-size) * 2.4);
+            transition: opacity 0s, max-height 0.2s, padding 0.2s;
+        }
+        .subscription-inner-wrapper input:disabled {
+            opacity: 0;
+            border: none;
+            background-color: none;
+            max-height: 0px;
+            padding: 0;
+        }
+
+        .subscription-inner-wrapper input:focus {
+            outline: none;
         }
 
         .subscription-inner-wrapper input::-webkit-input-placeholder {
@@ -717,6 +740,18 @@
             width: -webkit-fit-content;
             width: -moz-fit-content;
             width: fit-content;
+        }
+
+        .subscription-submit-button-error {
+            animation: tilt-shaking 0.2s linear;
+        }
+
+        @keyframes tilt-shaking {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0eg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
         }
     </style>
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/schedule.css">
@@ -905,7 +940,8 @@
         <div class="subscription-wrapper">
             <button class="subscription-button">• Subscription</button>
             <form class="subscription-inner-wrapper">
-                <p>Bring your mail and stay in touch with Builders Week.</p>
+                <p style="max-height: calc(var(--subscription-inner-wrapper-text-font-size) * 3);">Bring your mail and stay in touch with Builders Week.</p>
+                <p style="max-height: 0px;">You\'re on the list! Thanks for subscribing 🎉 <br><br> See you at Builders Week Istanbul, you\'ll hear from us soon with updates, resources, and ways to get involved.</p>
                 <input class="subscription-email-input" placeholder="vitalik@ethereum.org" type="email">
                 <button class="subscription-submit-button" type="submit">• Submit</button>
             </form>

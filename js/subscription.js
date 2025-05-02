@@ -16,6 +16,9 @@ window.addEventListener('load', () => {
     document.addEventListener('submit', event => {
         event.preventDefault();
 
+        const submitButton = document.querySelector('.subscription-submit-button');
+        submitButton.setAttribute('disabled', '');
+
         fetch("https://node101.io/subscribe", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -26,15 +29,30 @@ window.addEventListener('load', () => {
         })
             .then(res => res.json())
             .then(res => {
-                if (!res || !('data' in res) || res.error)
-                    return alert('Something went wrong!');
+                if ((!res || res.error) && res.error !== 'duplicated_unique_field')
+                    throw new Error(res.error);
 
-                alert('Success!');
-                document.querySelector('.subscription-inner-wrapper').classList.remove('subscription-inner-wrapper-shifted');
+                document.querySelector('.subscription-inner-wrapper input').setAttribute('disabled', '');
+
+                const texts = document.querySelectorAll('.subscription-inner-wrapper p');
+        
+                texts[1].style.maxHeight = 'calc(var(--subscription-inner-wrapper-text-font-size) * 10)';
+                texts[1].style.opacity = '1';
+                texts[0].style.maxHeight = '0px';
+                texts[0].style.opacity = '0';
+        
+                submitButton.innerHTML = '🎉 You\'re in!';
+                submitButton.setAttribute('disabled', '');
             })
             .catch(err => {
                 console.error(err);
-                alert('Something went wrong!');
+                submitButton.innerHTML = 'Oops!';
+                submitButton.classList.add('subscription-submit-button-error');
+                setTimeout(() => {
+                    submitButton.classList.remove('subscription-submit-button-error');
+                    submitButton.innerHTML = '• Submit';
+                    submitButton.removeAttribute('disabled');
+                }, 1000);
             });
     })
 });
