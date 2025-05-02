@@ -485,7 +485,7 @@
             font-size: var(--landing-title-font-size);
             font-weight: 600;
             line-height: 1.2;
-            letter-spacing: calc(var(--landing-title-font-size) / 20);
+            letter-spacing: .3dvw;
             width: -webkit-fit-content;
             width: -moz-fit-content;
             width: fit-content;
@@ -591,9 +591,29 @@
             }
         }
 
+        @media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) {
+            :root {
+                --landing-title-font-size: calc((100dvw - var(--page-horizontal-padding) * 2) * 0.064);
+            }
+        }}
+
         @media only screen and (min-width: 900px) {
             :root {
-                --landing-title-font-size: calc((100dvw - 2 * var(--page-horizontal-padding)) * 0.067);
+                --landing-title-font-size: calc((100dvw - var(--page-horizontal-padding) * 2) * 0.0675);
+            }
+
+            /* safari only */
+            @supports (-webkit-hyphens:none) {
+                :root {
+                    --landing-title-font-size: calc((100dvw - var(--page-horizontal-padding) * 2) * 0.064);
+                }
+            }
+
+            /* firefox only */
+            @-moz-document url-prefix() {
+                :root {
+                    --landing-title-font-size: calc((100dvw - var(--page-horizontal-padding) * 2) * 0.064);
+                }
             }
         }
 
