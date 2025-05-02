@@ -35,7 +35,12 @@
             font-family: 'Marjorie', Arial, sans-serif;
             font-weight: 400;
             cursor: url('/img/cursor/cursor@1x.svg') 4 3, pointer;
-            cursor: -webkit-image-set(url('/img/cursor/cursor@2x.svg') 2x) 4 3, pointer;
+            cursor: -webkit-image-set(url('/img/cursor/cursor@2x.svg') 2x, url('/img/cursor/cursor@1x.svg') 1x), pointer;
+        }
+        @-moz-document url-prefix() {
+            * {
+                cursor: url('/img/cursor/cursor@1x.svg') 4 3, pointer;
+            }
         }
 
         html {
