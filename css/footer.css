@@ -36,6 +36,7 @@ footer {
     width: 100%;
     min-width: 100%;
     z-index: 0;
+    gap: var(--footer-bottom-text-font-size);
 }
 
 .footer-bottom-wrapper a {
