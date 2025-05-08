@@ -8,18 +8,21 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#ffffff" />
     <title>Builders Week Istanbul</title>
-    <meta name="description" content="BWI is a week-long series of permissionless events designed to scale the blockchain development ecosystem.">
+    <meta name="description"
+        content="BWI is a week-long series of permissionless events designed to scale the blockchain development ecosystem.">
     <meta property="og:url" content="https://buildersweekistanbul.com">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Builders Week Istanbul">
-    <meta property="og:description" content="BWI is a week-long series of permissionless events designed to scale the blockchain development ecosystem.">
+    <meta property="og:description"
+        content="BWI is a week-long series of permissionless events designed to scale the blockchain development ecosystem.">
     <meta property="og:image" content="https://buildersweekistanbul.com/img/meta/meta.webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:site_name" content="Builders Week Istanbul">
     <meta property="twitter:domain" content="buildersweekistanbul.com">
     <meta property="twitter:url" content="https://buildersweekistanbul.com">
     <meta name="twitter:title" content="Builders Week Istanbul">
-    <meta name="twitter:description" content="BWI is a week-long series of permissionless events designed to scale the blockchain development ecosystem.">
+    <meta name="twitter:description"
+        content="BWI is a week-long series of permissionless events designed to scale the blockchain development ecosystem.">
     <meta property="twitter:image" content="https://buildersweekistanbul.com/img/meta/meta.webp">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -35,8 +38,9 @@
             font-family: 'Marjorie', Arial, sans-serif;
             font-weight: 400;
             cursor: url('/img/cursor/cursor@1x.svg') 4 3, pointer;
-            cursor: -webkit-image-set(url('/img/cursor/cursor@2x.svg') 2x, url('/img/cursor/cursor@1x.svg') 1x), pointer;
+            cursor: -webkit-image-set(url('/img/cursor/cursor@2x.svg') 2x, url('/img/cursor/cursor@1x.svg') 1x) 4 3, pointer;
         }
+
         @-moz-document url-prefix() {
             * {
                 cursor: url('/img/cursor/cursor@1x.svg') 4 3, pointer;
@@ -603,11 +607,13 @@
             }
         }
 
-        @media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) {
-            :root {
-                --landing-title-font-size: calc((100dvw - var(--page-horizontal-padding) * 2) * 0.064);
+        @media not all and (min-resolution:.001dpcm) {
+            @supports (-webkit-appearance:none) {
+                :root {
+                    --landing-title-font-size: calc((100dvw - var(--page-horizontal-padding) * 2) * 0.064);
+                }
             }
-        }}
+        }
 
         @media only screen and (min-width: 900px) {
             :root {
@@ -688,6 +694,7 @@
             transform: rotate(-90deg);
             transform-origin: bottom left;
         }
+
         .subscription-button-icon {
             display: flex;
             border-radius: calc(var(--subscription-button-font-size) / 6);
@@ -727,6 +734,7 @@
             overflow: hidden;
             transition: max-height 0.2s;
         }
+
         .subscription-inner-wrapper p:disabled {
             opacity: 0;
             max-height: 0px !important;
@@ -743,6 +751,7 @@
             max-height: calc(var(--subscription-inner-wrapper-input-font-size) * 2.4);
             transition: opacity 0s, max-height 0.2s, padding 0.2s;
         }
+
         .subscription-inner-wrapper input:disabled {
             opacity: 0;
             border: none;
@@ -805,11 +814,25 @@
         }
 
         @keyframes tilt-shaking {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            50% { transform: rotate(0eg); }
-            75% { transform: rotate(-5deg); }
-            100% { transform: rotate(0deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: rotate(0eg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
         }
     </style>
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/schedule.css">
@@ -1001,8 +1024,10 @@
                 Subscription
             </button>
             <form class="subscription-inner-wrapper">
-                <p style="max-height: calc(var(--subscription-inner-wrapper-text-font-size) * 3);">Bring your mail and stay in touch with Builders Week.</p>
-                <p style="max-height: 0px;">You're on the list! Thanks for subscribing 🎉 <br><br> See you at Builders Week Istanbul, you'll hear from us soon with updates, resources, and ways to get involved.</p>
+                <p style="max-height: calc(var(--subscription-inner-wrapper-text-font-size) * 3);">Bring your mail and
+                    stay in touch with Builders Week.</p>
+                <p style="max-height: 0px;">You're on the list! Thanks for subscribing 🎉 <br><br> See you at Builders
+                    Week Istanbul, you'll hear from us soon with updates, resources, and ways to get involved.</p>
                 <input class="subscription-email-input" placeholder="vitalik@ethereum.org" type="email">
                 <button class="subscription-submit-button" type="submit">
                     <span class="subscription-button-icon"></span>
@@ -1023,7 +1048,8 @@
             <h2 class="landing-date scale-on-scroll fade-in-on-scroll">
                 1-7 SEPTEMBER, 2025
             </h2>
-            <img class="landing-image scale-on-scroll fade-in-on-scroll" draggable="false" src="/img/galata.webp" alt="galata" fetchpriority="high">
+            <img class="landing-image scale-on-scroll fade-in-on-scroll" draggable="false" src="/img/galata.webp"
+                alt="galata" fetchpriority="high">
             <div class="landing-sponsors-wrapper">
                 <div class="landing-sponsors-inner-wrapper">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/bitcoin.svg"
@@ -1034,8 +1060,10 @@
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/ethistanbul.svg"
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
-                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/fuel.svg" alt="Fuel">
-                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/modapalas.svg" alt="Modapalas">
+                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/fuel.svg"
+                        alt="Fuel">
+                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/modapalas.svg"
+                        alt="Modapalas">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/ton.svg"
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/bitcoin.svg"
@@ -1046,8 +1074,10 @@
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/ethistanbul.svg"
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
-                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/fuel.svg" alt="Fuel">
-                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/modapalas.svg" alt="Modapalas">
+                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/fuel.svg"
+                        alt="Fuel">
+                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/modapalas.svg"
+                        alt="Modapalas">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/ton.svg"
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/bitcoin.svg"
@@ -1058,8 +1088,10 @@
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/ethistanbul.svg"
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
-                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/fuel.svg" alt="Fuel">
-                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/modapalas.svg" alt="Modapalas">
+                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/fuel.svg"
+                        alt="Fuel">
+                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/modapalas.svg"
+                        alt="Modapalas">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/ton.svg"
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/bitcoin.svg"
@@ -1070,8 +1102,10 @@
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.8);" alt="Cryptist">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/ethistanbul.svg"
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 2);" alt="ETH Istanbul">
-                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/fuel.svg" alt="Fuel">
-                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/modapalas.svg" alt="Modapalas">
+                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/fuel.svg"
+                        alt="Fuel">
+                    <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/modapalas.svg"
+                        alt="Modapalas">
                     <img class="landing-sponsors-each-sponsor" draggable="false" src="/img/sponsors/ton.svg"
                         style="height: calc(var(--landing-sponsors-each-sponsor-height) * 1.2);" alt="TON">
                 </div>
@@ -1119,37 +1153,72 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="1" rowspan="1"></td>
-                            <td colspan="1" rowspan="1"></td>
-                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1"
+                                style="background: linear-gradient(276.18deg, #70FFF5 1.7%, #73E3FF 86.94%);">
+                                <a target="_blank">Cryptist</a>
+                                <div class="schedule-item-location-wrapper">
+                                    TBA
+                                </div>
+                            </td>
+                            <td colspan="1" rowspan="1"
+                                style="background-image: url('/img/schedule/modapalas-cryptography.webp');">
+                                <a target="_blank">Modapalas Blackboard Cryptography X</a>
+                                <div class="schedule-item-location-wrapper">
+                                    TBA
+                                </div>
+                            </td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"
-                                style="background-image: url('/img/schedule/ethistanbul.webp');">
-                                <h1>ETHIstanbul Conference</h1>
+                                style="background: linear-gradient(180deg, #6B00A9 0%, #BA8FC9 100%);">
+                                <a target="_blank">Cosmos İstanbul</a>
                                 <div class="schedule-item-location-wrapper">
-                                    <img src="/img/schedule/location.svg" alt="">
+                                    TBA
+                                </div>
+                            </td>
+                            <td colspan="1" rowspan="1"
+                                style="background-image: url('/img/schedule/ethistanbul.webp');">
+                                <a target="_blank">ETHIstanbul Conference</a>
+                                <div class="schedule-item-location-wrapper">
                                     TBA
                                 </div>
                             </td>
                             <td colspan="2" rowspan="1" style="background-image: url('/img/schedule/hackathon.webp');">
-                                <h1>ETHIstanbul Hackathon</h1>
+                                <a target="_blank">ETHIstanbul Hackathon</a>
                                 <div class="schedule-item-location-wrapper">
-                                    <img src="/img/schedule/location.svg" alt="">
                                     TBA
                                 </div>
                             </td>
                         </tr>
                         <tr>
+                            <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/dinner.webp');">
+                                <a target="_blank">Exclusive VIP Dinner</a>
+                                <div class="schedule-item-location-wrapper">
+                                    TBA
+                                </div>
+                            </td>
                             <td colspan="1" rowspan="1"></td>
+                            <td colspan="3" rowspan="1"
+                                style="background-image: url('/img/schedule/bitcoinplusplus.webp');">
+                                <a target="_blank" href="https://btcplusplus.dev/">bitcoin++</a>
+                                <div class="schedule-item-location-wrapper">
+                                    TBA
+                                </div>
+                            </td>
                             <td colspan="1" rowspan="1"></td>
-                            <td colspan="1" rowspan="1"></td>
-                            <td colspan="1" rowspan="1"></td>
-                            <td colspan="1" rowspan="1"></td>
-                            <td colspan="1" rowspan="1"></td>
-                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/party.webp');">
+                                <a target="_blank">BWI Closing Party</a>
+                                <div class="schedule-item-location-wrapper">
+                                    TBA
+                                </div>
+                            </td>
                         </tr>
                         <tr>
-                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1" style="background: #F70">
+                                <a target="_blank">Citrea Hackerhouse</a>
+                                <div class="schedule-item-location-wrapper">
+                                    TBA
+                                </div>
+                            </td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
@@ -1178,9 +1247,8 @@
                                 style="
                                 background: linear-gradient(90deg, rgba(255, 52, 0, 0.455) 40.72%, rgba(231, 178, 255, 0.07) 100%);
                                 background: linear-gradient(90deg, color(display-p3 1.000 0.302 0.000 / 0.455) 40.72%, color(display-p3 0.875 0.706 0.996 / 0.07) 100%);">
-                                <h1>Math Village</h1>
+                                <a target="_blank">Math Village</a>
                                 <div class="schedule-item-location-wrapper">
-                                    <img src="/img/schedule/location.svg" alt="">
                                     İzmir, Şirince
                                 </div>
                             </td>
@@ -1253,18 +1321,19 @@
                 <h3 class="why-each-reason-title">OPPORTUNITIES</h3>
             </div>
             <div class="why-each-reason why-each-reason-rotate-icon fade-in-on-scroll">
-                <img class="why-each-reason-title-image why-each-reason-responsive-title-image" draggable="false" src="/img/why/sun.svg"
-                    alt="">
+                <img class="why-each-reason-title-image why-each-reason-responsive-title-image" draggable="false"
+                    src="/img/why/sun.svg" alt="">
                 <h3 class="why-each-reason-title">INVESTMENT & NETWORKING OPPORTUNITIES</h3>
-                <img class="why-each-reason-title-image why-each-reason-responsive-title-image" draggable="false" src="/img/why/sun.svg"
-                    alt="">
+                <img class="why-each-reason-title-image why-each-reason-responsive-title-image" draggable="false"
+                    src="/img/why/sun.svg" alt="">
             </div>
             <div class="why-each-reason-separator"></div>
             <div class="why-each-reason-responsive fade-in-on-scroll">
                 <h3 class="why-each-reason-title" style="font-style: italic;">SHOWCASE</h3>
                 <h3 class="why-each-reason-title">YOUR</h3>
                 <h3 class="why-each-reason-title" style="font-style: italic;">
-                    <img class="why-each-reason-responsive-title-image" draggable="false" src="/img/why/flower.svg" alt="">
+                    <img class="why-each-reason-responsive-title-image" draggable="false" src="/img/why/flower.svg"
+                        alt="">
                     PROJECT
                 </h3>
             </div>
