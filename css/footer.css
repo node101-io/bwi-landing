@@ -47,6 +47,19 @@ footer {
     font-style: italic;
 }
 
+.footer-bottom-wrapper-mail-responsive {
+    display: none;
+}
+
 .footer-bottom-inner-wrapper + a {
     z-index: 1;
+}
+
+@media only screen and (min-width: 500px) {
+    .footer-bottom-wrapper-mail {
+        display: none;
+    }
+    .footer-bottom-wrapper-mail-responsive {
+        display: block;
+    }
 }
