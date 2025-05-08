@@ -24,6 +24,7 @@ footer {
 }
 
 .footer-bottom-inner-wrapper {
+    display: flex;
     position: absolute;
     padding: var(--page-vertical-padding) var(--page-horizontal-padding);
     top: 0;
