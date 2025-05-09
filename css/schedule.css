@@ -104,7 +104,8 @@
     width: var(--schedule-body-each-item-arrow-box-size);
     height: var(--schedule-body-each-item-arrow-box-size);
     border-radius: var(--schedule-border-radius);
-    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
 }
 .schedule-table-wrapper tbody tr td:has(a[href])::after {
     position: absolute;
@@ -117,15 +118,14 @@
     background-position: center;
     width: var(--schedule-body-each-item-arrow-size);
     height: var(--schedule-body-each-item-arrow-size);
-    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 .schedule-table-wrapper tbody tr td:has(a[href]):hover::before {
-    --schedule-body-each-item-arrow-box-size: 14px;
-    --schedule-body-each-item-arrow-size: 10px;
+    opacity: 1;
 }
 .schedule-table-wrapper tbody tr td:has(a[href]):hover::after {
-    --schedule-body-each-item-arrow-box-size: 14px;
-    --schedule-body-each-item-arrow-size: 10px;
+    opacity: 1;
 }
 
 .schedule-table-wrapper tbody tr td a {
