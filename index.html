@@ -200,7 +200,15 @@
             font-weight: 400;
             src: url(/fonts/Marjorie-Regular.woff2) format('woff2');
         }
-
+        
+        @font-face {
+            font-family: 'Marjorie';
+            font-style: italic;
+            font-display: swap;
+            font-weight: 400;
+            src: url(/fonts/Marjorie-Italic.woff2) format('woff2');
+        }
+        
         @font-face {
             font-family: 'Apfel Grotezk';
             font-style: normal;
@@ -496,10 +504,14 @@
         }
 
         .landing-text {
-            /* font-family: 'Apfel Grotezk', sans-serif; */
             font-size: var(--landing-text-font-size);
             margin-top: calc(var(--landing-text-font-size) / 2);
             margin-bottom: calc(var(--landing-text-font-size) / 2);
+            font-style: italic;
+        }
+
+        .landing-text br {
+            display: none;
         }
 
         .landing-date {
@@ -604,6 +616,10 @@
             .landing-title-wrapper {
                 flex-direction: row;
                 gap: calc(var(--landing-title-font-size) / 4)
+            }
+
+            .landing-text br {
+                display: unset;
             }
         }
 
@@ -1120,8 +1136,8 @@
                 </h1>
             </div>
             <p class="landing-text fade-in-on-scroll" style="line-height: 1.3;">
-                This is where global founders, builders, investors, banks, and students come together to push the
-                boundaries of Web3 innovation.
+                This is where global founders, builders, investors, banks, and<br>
+                students come together to push the boundaries of Web3 innovation.
             </p>
             <img class="landing-image-full fade-in-on-scroll" draggable="false" src="/img/sun.webp" alt="sun">
         </div>

@@ -25,7 +25,8 @@
 }
 
 .faq-questions-wrapper {
-    width: min(100%, 600px);
+    width: 100%;
+    min-width: 100%;
     margin-bottom: 80px;
     margin-left: auto;
 }
@@ -55,6 +56,7 @@
     font-size: var(--faq-question-font-size);
     font-weight: 300;
     line-height: 1.2;
+    font-style: italic;
 }
 
 .faq-each-question-answer {
@@ -80,7 +82,7 @@
     min-height: 1px;
     width: 100%;
     background-color: var(--why-color);
-    margin: var(--faq-answer-font-size) 0;
+    margin: calc(var(--faq-answer-font-size) * 1.5) 0;
 }
 
 .faq-each-question-top-button-wrapper {
@@ -117,6 +119,18 @@
 @media only screen and (min-width: 600px) {
     :root {
         --faq-title-font-size: 70px;
+    }
+
+    .faq-questions-wrapper {
+        width: 85%;
+        min-width: 85%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .faq-questions-wrapper {
+        width: 70%;
+        min-width: 70%;
     }
 }
 
