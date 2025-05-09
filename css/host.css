@@ -41,6 +41,10 @@
     font-style: italic;
     text-align: center;
     margin: calc(var(--host-title-font-size) / 2) 0;
+    line-height: 1.8;
+}
+.host-text br {
+    display: none;
 }
 
 .host-bottom-text {
@@ -117,6 +121,12 @@
     min-height: var(--host-trail-box-dot-size);
     background-color: var(--host-trail-box-background-color);
     border-radius: 2px;
+}
+
+@media only screen and (min-width: 500px) {
+    .host-text br {
+        display: unset;
+    }
 }
 
 @media only screen and (min-width: 600px) {
