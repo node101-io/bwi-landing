@@ -55,6 +55,9 @@
     padding: 0 var(--page-horizontal-padding);
     margin-top: 100px;
 }
+.host-bottom-text br {
+    display: none;
+}
 
 .host-trail-box {
     position: absolute;
@@ -121,6 +124,12 @@
     min-height: var(--host-trail-box-dot-size);
     background-color: var(--host-trail-box-background-color);
     border-radius: 2px;
+}
+
+@media only screen and (min-width: 400px) {
+    .host-bottom-text br {
+        display: unset;
+    }
 }
 
 @media only screen and (min-width: 500px) {
