@@ -45,26 +45,9 @@ footer {
     text-decoration: none;
     color: var(--text-color);
     font-style: italic;
-}
-
-.footer-bottom-wrapper-mail-responsive {
-    display: none;
-}
-
-.footer-bottom-wrapper-mail,
-.footer-bottom-wrapper-mail-responsive {
     z-index: 1;
 }
 
 .footer-bottom-wrapper a:hover {
     color: #E764D5;
-}
-
-@media only screen and (min-width: 500px) {
-    .footer-bottom-wrapper-mail {
-        display: none;
-    }
-    .footer-bottom-wrapper-mail-responsive {
-        display: block;
-    }
 }
