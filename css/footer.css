@@ -51,7 +51,8 @@ footer {
     display: none;
 }
 
-.footer-bottom-inner-wrapper + a {
+.footer-bottom-wrapper-mail,
+.footer-bottom-wrapper-mail-responsive {
     z-index: 1;
 }
 
