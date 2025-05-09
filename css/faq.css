@@ -29,6 +29,9 @@
     min-width: 100%;
     margin-bottom: 80px;
     margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--faq-answer-font-size) * 1.5);
 }
 
 .faq-each-question-wrapper {
@@ -38,6 +41,8 @@
     transition: all .5s;
     gap: 0;
     transition: gap .5s;
+    padding-bottom: calc(var(--faq-answer-font-size) * 1.5);
+    border-bottom: 1px solid var(--why-color);
 }
 .faq-each-question-wrapper-open {
     gap: var(--faq-answer-font-size);
@@ -75,14 +80,6 @@
     display: flex;
     justify-content: space-between;
     gap: var(--faq-each-question-top-button-line-height);
-}
-
-.faq-each-question-separator {
-    height: 1px;
-    min-height: 1px;
-    width: 100%;
-    background-color: var(--why-color);
-    margin: calc(var(--faq-answer-font-size) * 1.5) 0;
 }
 
 .faq-each-question-top-button-wrapper {
