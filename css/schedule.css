@@ -41,7 +41,7 @@
     overflow-x: auto;
     scrollbar-width: none;
     padding: 0 var(--page-horizontal-padding);
-    margin-bottom: 180px;
+    margin-bottom: 100px;
 }
 .schedule-tables-wrapper::-webkit-scrollbar {
     display: none;
