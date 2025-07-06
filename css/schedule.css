@@ -4,9 +4,9 @@
     --schedule-head-background-color: #FFB3F9;
     --schedule-head-font-color: #780068;
     --schedule-head-font-size: 12px;
-    --schedule-head-each-date-width: 180px;
+    --schedule-head-each-date-width: 240px;
     --schedule-head-each-date-height: 34px;
-    --schedule-body-each-item-height: 90px;
+    --schedule-body-each-item-height: 120px;
     --schedule-body-each-item-background-color: #F0FAFF;
     --schedule-body-each-item-border-color: #A3A3A3;
     --schedule-body-each-item-text-font-size: 15px;
