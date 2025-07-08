@@ -857,8 +857,10 @@
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/faq.css">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/host.css">
     <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/css/footer.css">
-    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,600;1,600&display=swap" />
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,600;1,600&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="/js/faq.js" type="module"></script>
     <script src="/js/trailboxanimation.js" type="module"></script>
     <script src="/js/subscription.js" type="module"></script>
@@ -1035,7 +1037,7 @@
             <a href="#host">HOST YOUR OWN EVENT</a>
             <a href="https://x.com/buildersweekist" target="_blank">X</a>
         </div>
-        <div class="subscription-wrapper">
+        <!-- <div class="subscription-wrapper">
             <button class="subscription-button">
                 <span class="subscription-button-icon"></span>
                 Subscription
@@ -1067,9 +1069,9 @@
             </h2>
             <img class="landing-image scale-on-scroll fade-in-on-scroll" draggable="false" src="/img/galata.webp"
                 alt="galata" fetchpriority="high">
-        </div>
+        </div> -->
         <div class="schedule-wrapper" id="schedule">
-            <div class="landing-title-wrapper fade-in-on-scroll">
+            <!-- <div class="landing-title-wrapper fade-in-on-scroll">
                 <h1 class="landing-title-each-line">BWI 2025</h1>
                 <h1 class="landing-title-each-line">SCHEDULE</h1>
             </div>
@@ -1080,7 +1082,7 @@
                 target="_blank" id="view-the-agenda-button">Submit Your Event</a>
             <p class="schedule-drag-title fade-in-on-scroll">
                 ← Hold and drag schedule for more →
-            </p>
+            </p> -->
             <div class="schedule-tables-wrapper dragscroll fade-in-on-scroll">
                 <table class="schedule-table-wrapper">
                     <thead>
@@ -1110,77 +1112,177 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="3" rowspan="1"
-                                style="background: linear-gradient(90deg, #FFA000 0%, #FF0051 43.12%)">
-                                <a target="_blank" href="https://www.encrypt-on.com/activities/conferences/lightsec-2025/">LightSEC 2025</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                            <td colspan="3" rowspan="1" style="background: linear-gradient(90deg, #FFA000 0%, #FF0051 43.12%)">
+                                <a target="_blank" href="https://www.encrypt-on.com/activities/conferences/lightsec-2025/">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">LightSEC 2025</h2>
+                                        <h3 class="schedule-item-organizer">METU & Sabancı Academy</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Conference & Workshop</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">250</h4>
+                                        <h4 class="schedule-item-level">Advanced</h4>
+                                        <h4 class="schedule-item-time">09:00 - 17:00</h4>
+                                        <h4 class="schedule-item-location">Rami Library</h4>
+                                    </div>
+                                </a>
                             </td>
-                            <td colspan="1" rowspan="1"
-                                style="background-image: url('/img/schedule/cryptist.webp');">
-                                <a target="_blank" href="https://cryptist.org">Cryptist</a>
-                                <div class="schedule-item-location-wrapper">
-                                    Rami Library
-                                </div>
+                            <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/cryptist.webp');">
+                                <a target="_blank" href="https://cryptist.org">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">Cryptist</h2>
+                                        <h3 class="schedule-item-organizer">Modapalas & node101</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Conference & Workshop</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">150</h4>
+                                        <h4 class="schedule-item-level">Advanced</h4>
+                                        <h4 class="schedule-item-time">09:00 - 19:00</h4>
+                                        <h4 class="schedule-item-location">Rami Library</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="3" rowspan="1" style="background-image: url('/img/schedule/hackathon.webp');">
-                                <a target="_blank" href="https://ethistanbul.io">ETHIstanbul Hackathon</a>
-                                <div class="schedule-item-location-wrapper">
-                                    Rami Library
-                                </div>
+                                <a target="_blank" href="https://ethistanbul.io">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">ETHIstanbul Hackathon</h2>
+                                        <h3 class="schedule-item-organizer">ETHIstanbul</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Hackathon</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">350 - 500</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">1st day 18:00 - 3rd day 18:00</h4>
+                                        <h4 class="schedule-item-location">Rami Library</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1"></td>
-                            <td colspan="11" rowspan="1"
-                                style="background-image: url('/img/schedule/zukas.webp');">
-                                <a target="_blank">ZuKaş</a>
-                                <div class="schedule-item-location-wrapper">
-                                    Kaş, Antalya
-                                </div>
+                            <td colspan="11" rowspan="1" style="background-image: url('/img/schedule/zukas.webp');">
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">ZuKaş</h2>
+                                        <h3 class="schedule-item-organizer">Zukaş</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Co-living Experience</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">150+</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">1st day 09:00 - 11th day 23:59</h4>
+                                        <h4 class="schedule-item-location">Kaş, Antalya</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
                         </tr>
                         <tr>
                             <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/party.webp');">
-                                <a target="_blank">BWI Opening Party</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">BWI Opening Party</h2>
+                                        <h3 class="schedule-item-organizer">TBA</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Party</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">TBA</h4>
+                                        <h4 class="schedule-item-level">TBA</h4>
+                                        <h4 class="schedule-item-time">TBA</h4>
+                                        <h4 class="schedule-item-location">TBA</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1"
                                 style="background-image: url('/img/schedule/modapalas-cryptography.webp');">
-                                <a target="_blank">Modapalas Blackboard Cryptography X</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">Modapalas Blackboard Cryptography X</h2>
+                                        <h3 class="schedule-item-organizer">Modapalas</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Workshop</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">70</h4>
+                                        <h4 class="schedule-item-level">Advanced</h4>
+                                        <h4 class="schedule-item-time">09:00 - 18:00</h4>
+                                        <h4 class="schedule-item-location">TBA</h4>
+                                    </div>
+                                </a>
                             </td>
-                            <td colspan="1" rowspan="1"
-                                style="background: linear-gradient(180deg, #6B00A9 0%, #BA8FC9 100%);">
-                                <a target="_blank">Cosmos İstanbul</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                            <td colspan="1" rowspan="1" style="background: linear-gradient(180deg, #6B00A9 0%, #BA8FC9 100%);">
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">Cosmos Istanbul</h2>
+                                        <h3 class="schedule-item-organizer">Cosmoverse & node101</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Conference</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">350</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">TBA</h4>
+                                        <h4 class="schedule-item-location">Han Space Levent</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/cipher-house.webp');">
-                                <a target="_blank" href="https://x.com/buildersweekist/status/1929558611535048973">Cipher House</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                                <a target="_blank" href="https://x.com/buildersweekist/status/1929558611535048973">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">Cipher House</h2>
+                                        <h3 class="schedule-item-organizer">Furkan Akal & Ömer Yanar</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Interactive Workshop</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">40+</h4>
+                                        <h4 class="schedule-item-level">Advanced</h4>
+                                        <h4 class="schedule-item-time">09:00 - 18:00</h4>
+                                        <h4 class="schedule-item-location">Galata - Postane</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1"
                                 style="background-image: url('/img/schedule/ethistanbul.webp');">
-                                <a target="_blank" href="https://ethistanbul.io">ETHIstanbul Conference</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                                <a target="_blank" href="https://ethistanbul.io">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">ETHIstanbul Conference</h2>
+                                        <h3 class="schedule-item-organizer">ETHIstanbul</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Conference</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">800</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">09:00 - 18:00</h4>
+                                        <h4 class="schedule-item-location">TBA</h4>
+                                    </div>
+                                </a>
                             </td>
-                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1">
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">CipherDay by TÜBITAK</h2>
+                                        <h3 class="schedule-item-organizer">TÜBITAK</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Conference</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">120</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">09:00 - 18:00</h4>
+                                        <h4 class="schedule-item-location">Rami Library</h4>
+                                    </div>
+                                </a>
+                            </td>
                             <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/dalosphere.webp');">
-                                <a target="_blank">Dalosphere Closing Party</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">Dalosphere Closing Party</h2>
+                                        <h3 class="schedule-item-organizer">Dalosphere</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Party</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">160+</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">19:00 - 02:00</h4>
+                                        <h4 class="schedule-item-location">TBA</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
@@ -1188,34 +1290,53 @@
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
-                            <td colspan="8" rowspan="1"
-                                style="background-image: url('/img/schedule/modagarden.webp');">
-                                <a target="_blank">ModaGarden</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                            <td colspan="8" rowspan="1" style="background-image: url('/img/schedule/modagarden.webp');">
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">ModaGarden</h2>
+                                        <h3 class="schedule-item-organizer">Modapalas & Zuberlin</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Co-living Experience</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">80</h4>
+                                        <h4 class="schedule-item-level">Advanced</h4>
+                                        <h4 class="schedule-item-time">1st day 09:00 - 11th day 23:59</h4>
+                                        <h4 class="schedule-item-location">Kaş, Antalya</h4>
+                                    </div>
+                                </a>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="1" rowspan="1" style="background: #F70">
-                                <a target="_blank">Citrea Hackerhouse</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                            <td colspan="1" rowspan="1"></td>
+                            <td colspan="1" rowspan="1" style="background: linear-gradient(101.98deg, #8600A8 -45.14%, #FF7AF4 66.17%, #FFB500 106.78%);">
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">__zkhack__</h2>
+                                        <h3 class="schedule-item-organizer">ZKHack</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Gathering</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">120</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">19:00 - 23:00</h4>
+                                        <h4 class="schedule-item-location">TBA</h4>
+                                    </div>
+                                </a>
                             </td>
-                            <td colspan="1" rowspan="1"
-                                style="background: linear-gradient(101.98deg, #8600A8 -45.14%, #FF7AF4 66.17%, #FFB500 106.78%);">
-                                <a target="_blank">__zkhack__</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
-                            </td>
-                            <td colspan="3" rowspan="1"
-                                style="background-image: url('/img/schedule/bitcoinplusplus.webp');">
-                                <a target="_blank" href="https://btcplusplus.dev/conf/istanbul">bitcoin++</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                            <td colspan="3" rowspan="1" style="background-image: url('/img/schedule/bitcoinplusplus.webp');">
+                                <a target="_blank" href="https://btcplusplus.dev/conf/istanbul">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">bitcoin++</h2>
+                                        <h3 class="schedule-item-organizer">Bitcoin++</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Conference</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">450</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">09:00 - 18:00</h4>
+                                        <h4 class="schedule-item-location">Salt Galata</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
@@ -1237,17 +1358,35 @@
                         <tr>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/diy-ai.webp');">
-                                <a target="_blank">DIY AI - Own Your Intelligence</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">DIY AI - Own Your Intelligence</h2>
+                                        <h3 class="schedule-item-organizer">DRIA</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Conference & Gathering</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">150</h4>
+                                        <h4 class="schedule-item-level">All are welcome</h4>
+                                        <h4 class="schedule-item-time">17:00 - 23:59</h4>
+                                        <h4 class="schedule-item-location">Ark House</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1" style="background-image: url('/img/schedule/dinner.webp');">
-                                <a target="_blank">Exclusive VIP Dinner</a>
-                                <div class="schedule-item-location-wrapper">
-                                    TBA
-                                </div>
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">Dinner</h2>
+                                        <h3 class="schedule-item-organizer">Modapalas & Citrea & node101</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Exclusive Dinner</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">80</h4>
+                                        <h4 class="schedule-item-level">Invite Only</h4>
+                                        <h4 class="schedule-item-time">19:00 - 23:00</h4>
+                                        <h4 class="schedule-item-location">TBA</h4>
+                                    </div>
+                                </a>
                             </td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
@@ -1266,6 +1405,23 @@
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
                             <td colspan="1" rowspan="1"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="9" rowspan="1" style="background: linear-gradient(90deg, #FF8930 0%, #F08BE2 100%);">
+                                <a target="_blank">
+                                    <div class="schedule-item-top-wrapper">
+                                        <h2 class="schedule-item-name">Citrea Hackerhouse</h2>
+                                        <h3 class="schedule-item-organizer">Citrea</h3>
+                                    </div>
+                                    <h3 class="schedule-item-type">Private Hackerhouse</h3>
+                                    <div class="schedule-item-bottom-wrapper">
+                                        <h4 class="schedule-item-people-count">30</h4>
+                                        <h4 class="schedule-item-level">Advanced</h4>
+                                        <h4 class="schedule-item-time">All day</h4>
+                                        <h4 class="schedule-item-location">TBA</h4>
+                                    </div>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

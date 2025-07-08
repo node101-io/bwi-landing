@@ -3,9 +3,9 @@
     --schedule-drag-title-font-size: 16px;
     --schedule-head-background-color: #FFB3F9;
     --schedule-head-font-color: #780068;
-    --schedule-head-font-size: 12px;
-    --schedule-head-each-date-width: 240px;
-    --schedule-head-each-date-height: 34px;
+    --schedule-head-font-size: 20px;
+    --schedule-head-each-date-width: 280px;
+    --schedule-head-each-date-height: 50px;
     --schedule-body-each-item-height: 120px;
     --schedule-body-each-item-background-color: #F0FAFF;
     --schedule-body-each-item-border-color: #A3A3A3;
@@ -14,8 +14,13 @@
     --schedule-body-each-item-location-background-color: #FFF6BD;
     --schedule-body-each-item-location-text-color: #E13DCB;
     --schedule-body-each-item-location-font-size: 10px;
-    --schedule-body-each-item-arrow-box-size: 12px;
-    --schedule-body-each-item-arrow-size: 8px;
+    --schedule-body-each-item-arrow-box-size: 20px;
+    --schedule-body-each-item-arrow-size: 14px;
+
+    --schedule-item-name-font-size: 13px;
+    --schedule-item-organizer-font-size: 9px;
+    --schedule-item-type-font-size: 9px;
+    --schedule-item-bottom-wrapper-font-size: 9px;
 }
 
 .schedule-wrapper {
@@ -55,7 +60,6 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: var(--schedule-head-font-color);
-    padding-left: var(--schedule-head-font-size);
     width: var(--schedule-head-each-date-width);
     min-width: var(--schedule-head-each-date-width);
     height: var(--schedule-head-each-date-height);
@@ -63,7 +67,7 @@
     font-size: var(--schedule-head-font-size);
     background-color: var(--schedule-head-background-color);
     border-radius: var(--schedule-border-radius);
-    text-align: start;
+    text-align: center;
 }
 
 .schedule-table-wrapper tbody tr td {
@@ -109,8 +113,8 @@ table, table * {
 
 .schedule-table-wrapper tbody tr td:has(a[href])::before {
     position: absolute;
-    top: calc(var(--schedule-body-each-item-text-font-size) / 2);
-    right: calc(var(--schedule-body-each-item-text-font-size) / 2);
+    top: calc(var(--schedule-body-each-item-text-font-size) / 3 * 2 + 1px);
+    right: calc(var(--schedule-body-each-item-text-font-size) / 3 * 2 + 1px);
     content: '';
     background-color: var(--schedule-body-each-item-location-background-color);
     width: var(--schedule-body-each-item-arrow-box-size);
@@ -121,8 +125,8 @@ table, table * {
 }
 .schedule-table-wrapper tbody tr td:has(a[href])::after {
     position: absolute;
-    top: calc(var(--schedule-body-each-item-text-font-size) / 2 + (var(--schedule-body-each-item-arrow-box-size) - var(--schedule-body-each-item-arrow-size)) / 2);
-    right: calc(var(--schedule-body-each-item-text-font-size) / 2 + (var(--schedule-body-each-item-arrow-box-size) - var(--schedule-body-each-item-arrow-size)) / 2);
+    top: calc(var(--schedule-body-each-item-text-font-size) / 3 * 2 + (var(--schedule-body-each-item-arrow-box-size) - var(--schedule-body-each-item-arrow-size)) / 2 + 1px);
+    right: calc(var(--schedule-body-each-item-text-font-size) / 3 * 2 + (var(--schedule-body-each-item-arrow-box-size) - var(--schedule-body-each-item-arrow-size)) / 2 + 1px);
     content: '';
     background-image: url('/img/schedule/arrow.svg');
     background-size: contain;
@@ -140,39 +144,117 @@ table, table * {
     opacity: 1;
 }
 
-.schedule-table-wrapper tbody tr td a {
-    display: block;
-    font-size: var(--schedule-body-each-item-text-font-size);
-    color: var(--background-color);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-    padding: calc(var(--schedule-body-each-item-text-font-size) / 2);
-    padding-right: calc(var(--schedule-body-each-item-text-font-size) / 2 + var(--schedule-body-each-item-arrow-box-size));
+.schedule-table-wrapper tbody tr td:has(a[href]):hover .schedule-item-organizer {
+    margin-right: calc(var(--schedule-body-each-item-arrow-box-size) + (var(--schedule-body-each-item-text-font-size) / 3 * 2));
 }
 
-.schedule-item-location-wrapper {
-    position: absolute;
-    bottom: calc(var(--schedule-body-each-item-text-font-size) / 2);
-    right: calc(var(--schedule-body-each-item-text-font-size) / 2);
-    border-radius: var(--schedule-border-radius);
-    background-color: var(--schedule-body-each-item-location-background-color);
-    color: var(--schedule-body-each-item-location-text-color);
-    font-size: var(--schedule-body-each-item-location-font-size);
+.schedule-table-wrapper tbody tr td a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: calc(var(--schedule-body-each-item-text-font-size) / 3 * 2);
+    text-decoration: none;
+}
+
+.schedule-item-top-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.schedule-item-name {
+    font-size: var(--schedule-item-name-font-size);
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: var(--background-color);
+}
+
+.schedule-item-organizer {
+    transition: margin-right 0.2s ease-in-out;
+    font-size: var(--schedule-item-organizer-font-size);
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: var(--background-color);
+}
+
+.schedule-item-type {
+    font-size: var(--schedule-item-type-font-size);
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: var(--background-color);
+    border: 0.5px solid var(--background-color);
+    border-radius: 6px;
+    width: fit-content;
     width: -webkit-fit-content;
     width: -moz-fit-content;
-    width: fit-content;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    display: flex;
-    line-height: 1;
-    align-items: center;
-    gap: calc(var(--schedule-body-each-item-location-font-size) / 2);
-    padding: calc(var(--schedule-body-each-item-location-font-size) / 4) calc(var(--schedule-body-each-item-location-font-size) / 2);
+    padding: 2px 7px;
+    margin-top: auto;
+    margin-bottom: var(--schedule-body-each-item-text-font-size);
 }
-.schedule-item-location-wrapper::before {
+
+.schedule-item-bottom-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: calc(var(--schedule-body-each-item-text-font-size) / 2);
+}
+
+.schedule-item-bottom-wrapper > * {
+    font-size: var(--schedule-item-bottom-wrapper-font-size);
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: var(--background-color);
+}
+
+.schedule-item-people-count {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--schedule-item-bottom-wrapper-font-size) / 5);
+}
+.schedule-item-people-count::before {
+    content: '';
+    display: block;
+    background-image: url('/img/schedule/people.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: calc(var(--schedule-item-bottom-wrapper-font-size));
+    min-width: calc(var(--schedule-item-bottom-wrapper-font-size));
+    height: calc(var(--schedule-item-bottom-wrapper-font-size));
+    min-height: calc(var(--schedule-item-bottom-wrapper-font-size));
+}
+
+.schedule-item-level {
+
+}
+
+.schedule-item-time {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--schedule-item-bottom-wrapper-font-size) / 5);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schedule-item-time::before {
+    content: '';
+    background-image: url('/img/schedule/time.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: var(--schedule-body-each-item-location-font-size);
+    min-width: var(--schedule-body-each-item-location-font-size);
+    height: var(--schedule-body-each-item-location-font-size);
+    min-height: var(--schedule-body-each-item-location-font-size);
+}
+
+.schedule-item-location {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--schedule-item-bottom-wrapper-font-size) / 5);
+}
+
+.schedule-item-location::before {
     content: '';
     background-image: url('/img/schedule/location.svg');
     background-size: contain;
@@ -181,7 +263,7 @@ table, table * {
     width: var(--schedule-body-each-item-location-font-size);
     min-width: var(--schedule-body-each-item-location-font-size);
     height: var(--schedule-body-each-item-location-font-size);
-    margin-bottom: 1px;
+    min-height: var(--schedule-body-each-item-location-font-size);
 }
 
 @media only screen and (min-width: 600px) {
