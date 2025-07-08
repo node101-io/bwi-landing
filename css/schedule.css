@@ -160,6 +160,7 @@ table, table * {
 .schedule-item-top-wrapper {
     display: flex;
     justify-content: space-between;
+    gap: calc(var(--schedule-item-name-font-size) / 2);
 }
 
 .schedule-item-name {
