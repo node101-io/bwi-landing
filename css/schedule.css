@@ -271,5 +271,16 @@ table, table * {
     #view-the-agenda-button {
         --general-button-font-size: 18px;
         margin-left: auto;
-    } 
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .schedule-item-name {
+        position: sticky;
+        left: 0;
+    }
+    .schedule-item-type {
+        position: sticky;
+        left: 0;
+    }
 }
