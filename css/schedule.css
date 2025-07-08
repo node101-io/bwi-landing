@@ -4,7 +4,7 @@
     --schedule-head-background-color: #FFB3F9;
     --schedule-head-font-color: #780068;
     --schedule-head-font-size: 20px;
-    --schedule-head-each-date-width: 280px;
+    --schedule-head-each-date-width: 320px;
     --schedule-head-each-date-height: 50px;
     --schedule-body-each-item-height: 120px;
     --schedule-body-each-item-background-color: #F0FAFF;
@@ -17,10 +17,10 @@
     --schedule-body-each-item-arrow-box-size: 20px;
     --schedule-body-each-item-arrow-size: 14px;
 
-    --schedule-item-name-font-size: 13px;
-    --schedule-item-organizer-font-size: 9px;
-    --schedule-item-type-font-size: 9px;
-    --schedule-item-bottom-wrapper-font-size: 9px;
+    --schedule-item-name-font-size: 14px;
+    --schedule-item-organizer-font-size: 10px;
+    --schedule-item-type-font-size: 10px;
+    --schedule-item-bottom-wrapper-font-size: 10px;
 }
 
 .schedule-wrapper {
