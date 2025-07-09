@@ -185,6 +185,7 @@ table, table * {
     line-height: 1;
     margin-top: auto;
     margin-bottom: auto;
+    width: fit-content;
 }
 
 .schedule-item-organizer {
