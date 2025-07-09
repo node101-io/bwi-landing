@@ -11,11 +11,11 @@
     --schedule-body-each-item-border-color: #A3A3A3;
     --schedule-body-each-item-text-font-size: 15px;
     --schedule-body-each-item-active-border-color: #E7B2FF;
-    --schedule-body-each-item-location-background-color: #FFF6BD;
+    --schedule-body-each-item-location-background-color: #FFA3F3;
     --schedule-body-each-item-location-text-color: #E13DCB;
     --schedule-body-each-item-icons-size: 14px;
     --schedule-body-each-item-arrow-box-size: 20px;
-    --schedule-body-each-item-arrow-size: 14px;
+    --schedule-body-each-item-arrow-size: 10px;
 
     --schedule-item-name-font-size: 20px;
     --schedule-item-organizer-font-size: 14px;
@@ -120,9 +120,11 @@ table, table * {
     background-color: var(--schedule-body-each-item-location-background-color);
     width: var(--schedule-body-each-item-arrow-box-size);
     height: var(--schedule-body-each-item-arrow-box-size);
-    border-radius: var(--schedule-border-radius);
+    border-radius: calc(var(--schedule-border-radius)/2);
     transition: opacity 0.2s ease-in-out;
     opacity: 0;
+    border: 1px solid #6D254E;
+    box-sizing: border-box;
 }
 .schedule-table-wrapper tbody tr td:has(a[href])::after {
     position: absolute;
