@@ -78,6 +78,7 @@
     border: 1px solid var(--schedule-body-each-item-border-color);
     border-radius: var(--schedule-border-radius);
     opacity: 0;
+    background: #F1FFDF;
 }
 
 .schedule-table-wrapper tbody tr td:has(a) {
@@ -179,7 +180,7 @@ table, table * {
     font-size: var(--schedule-item-name-font-size);
     font-weight: 600;
     font-family: 'Inter', sans-serif;
-    color: var(--background-color);
+    color: #641842;
     text-transform: uppercase;
     line-height: 1;
     margin-top: auto;
@@ -191,7 +192,7 @@ table, table * {
     font-size: var(--schedule-item-organizer-font-size);
     font-weight: 500;
     font-family: 'Inter', sans-serif;
-    color: var(--background-color);
+    color: #641842;
     text-align: right;
     width: fit-content;
 }
@@ -200,15 +201,15 @@ table, table * {
     font-size: var(--schedule-item-bottom-wrapper-font-size);
     font-weight: 500;
     font-family: 'Inter', sans-serif;
-    color: var(--background-color);
+    color: #641842;
 }
 
 .schedule-item-type {
     font-size: var(--schedule-item-type-font-size);
     font-weight: 500;
     font-family: 'Inter', sans-serif;
-    color: var(--background-color);
-    border: 0.5px solid var(--background-color);
+    color: #641842;
+    border: 0.5px solid #641842;
     border-radius: 6px;
     width: fit-content;
     width: -webkit-fit-content;
@@ -230,14 +231,14 @@ table, table * {
     font-size: var(--schedule-item-bottom-wrapper-font-size);
     font-weight: 500;
     font-family: 'Inter', sans-serif;
-    color: var(--background-color);
+    color: #641842;
 }
 
 .schedule-item-people-count {
     display: flex;
     align-items: center;
     gap: calc(var(--schedule-item-bottom-wrapper-font-size) / 5);
-    color: var(--background-color);
+    color: #641842;
     font-size: var(--schedule-item-bottom-wrapper-font-size);
     font-weight: 500;
     font-family: 'Inter', sans-serif;
