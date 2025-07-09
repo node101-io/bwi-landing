@@ -138,15 +138,17 @@ table, table * {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
-.schedule-table-wrapper tbody tr td:has(a[href]):hover::before {
-    opacity: 1;
-}
-.schedule-table-wrapper tbody tr td:has(a[href]):hover::after {
-    opacity: 1;
-}
+@media (hover: hover) {
+    .schedule-table-wrapper tbody tr td:has(a[href]):hover::before {
+        opacity: 1;
+    }
+    .schedule-table-wrapper tbody tr td:has(a[href]):hover::after {
+        opacity: 1;
+    }
 
-.schedule-table-wrapper tbody tr td:has(a[href]):hover .schedule-item-organizer {
-    margin-right: calc(var(--schedule-body-each-item-arrow-box-size) + (var(--schedule-body-each-item-text-font-size) / 3 * 2));
+    .schedule-table-wrapper tbody tr td:has(a[href]):hover .schedule-item-organizer {
+        margin-right: calc(var(--schedule-body-each-item-arrow-box-size) + (var(--schedule-body-each-item-text-font-size) / 3 * 2));
+    }
 }
 
 .schedule-table-wrapper tbody tr td a {
