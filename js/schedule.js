@@ -6,9 +6,23 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 2000);
 
     const stickyHeadWrapper = document.querySelector('.schedule-sticky-head-wrapper');
+    
+    let isScrolling = false;
+    let scrollLeft = 0;
 
     document.querySelector('.schedule-tables-wrapper').addEventListener('scroll', event => {
-        stickyHeadWrapper.scrollLeft = event.target.scrollLeft;
+        scrollLeft = event.target.scrollLeft;
+
+        if (isScrolling) return;
+
+        isScrolling = true;
+
+        requestAnimationFrame(function() {
+            if (!isScrolling) return;
+
+            stickyHeadWrapper.scrollLeft = scrollLeft;
+            isScrolling = false;
+        });
     });
 
     const theadMock = document.querySelector('.schedule-tables-mock-head-for-observer');
