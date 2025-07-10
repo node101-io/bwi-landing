@@ -128,6 +128,7 @@ table, table * {
     opacity: 0;
     border: 1px solid #6D254E;
     box-sizing: border-box;
+    z-index: 1;
 }
 .schedule-table-wrapper tbody tr td:has(a[href])::after {
     position: absolute;
@@ -142,6 +143,7 @@ table, table * {
     height: var(--schedule-body-each-item-arrow-size);
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
+    z-index: 2;
 }
 @media (hover: hover) {
     .schedule-table-wrapper tbody tr td:has(a[href]):hover::before {
