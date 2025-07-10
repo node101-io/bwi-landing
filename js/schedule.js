@@ -7,12 +7,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const stickyHeadWrapper = document.querySelector('.schedule-sticky-head-wrapper');
 
-    // document.querySelector('.schedule-tables-wrapper').addEventListener('scroll', event => {
-    //     stickyHeadWrapper.scrollLeft = event.target.scrollLeft;
-    // });
-
-    new ScrollMirror(document.querySelectorAll('.schedule-tables-wrapper, .schedule-sticky-head-wrapper'));
-
+    document.querySelector('.schedule-tables-wrapper').addEventListener('scroll', event => {
+        stickyHeadWrapper.scrollLeft = event.target.scrollLeft;
+    });
 
     const theadMock = document.querySelector('.schedule-tables-mock-head-for-observer');
     const tbodyMock = document.querySelector('.schedule-tables-mock-body-for-observer');
