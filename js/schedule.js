@@ -26,9 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
                 isBodyMockVisible = entry.isIntersecting;
         });
 
-        console.log(isHeadMockVisible, isBodyMockVisible)
-
-        // stickyHeadWrapper.classList.toggle('display-none', isHeadMockVisible || !isBodyMockVisible)
         stickyHeadWrapper.style.opacity = isHeadMockVisible || !isBodyMockVisible ? 0 : 1;
     }, {
         root: document.querySelector('.all-wrapper'),
