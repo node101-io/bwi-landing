@@ -1,15 +1,17 @@
 window.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
         document.querySelectorAll('td:not([colspan="1"]) .schedule-item-name').forEach(item => {
-            item.style.paddingRight = `${item.nextElementSibling.offsetWidth + 12}px`;
+            item.style.paddingRight = `${item.nextElementSibling.offsetWidth + 12 + (item.parentElement.parentElement.href ? 26 : 0)}px`;
         })
     }, 2000);
 
     const stickyHeadWrapper = document.querySelector('.schedule-sticky-head-wrapper');
 
-    document.querySelector('.schedule-tables-wrapper').addEventListener('scroll', event => {
-        stickyHeadWrapper.scrollLeft = event.target.scrollLeft;
-    });
+    // document.querySelector('.schedule-tables-wrapper').addEventListener('scroll', event => {
+    //     stickyHeadWrapper.scrollLeft = event.target.scrollLeft;
+    // });
+
+    new ScrollMirror(document.querySelectorAll('.schedule-tables-wrapper, .schedule-sticky-head-wrapper'));
 
 
     const theadMock = document.querySelector('.schedule-tables-mock-head-for-observer');
