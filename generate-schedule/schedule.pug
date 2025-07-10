@@ -1,0 +1,57 @@
+mixin eventCardMultiDay(event)
+    .schedule-item-top-wrapper
+        h2.schedule-item-name= event.NAME
+        h3.schedule-item-organizer= event.ORGANIZER
+    h4.schedule-item-level= event.LEVEL
+    if event.isShort
+        h3.schedule-item-type(style="margin-bottom: auto;")= event.TYPE
+    else
+        h3.schedule-item-type= event.TYPE
+    .schedule-item-bottom-wrapper
+        h4.schedule-item-time= event.TIME
+        h4.schedule-item-location= event.LOCATION
+        h4.schedule-item-people-count= event.PEOPLE
+
+mixin eventCardSingleDay(event)
+    .schedule-item-top-wrapper-tight
+        h2.schedule-item-name= event.NAME
+        h3.schedule-item-organizer= event.ORGANIZER
+        .schedule-item-middle-wrapper
+            h4.schedule-item-people-count= event.PEOPLE
+            h4.schedule-item-level= event.LEVEL
+        h3.schedule-item-type= event.TYPE
+    .schedule-item-bottom-wrapper
+        h4.schedule-item-time= event.TIME
+        h4.schedule-item-location= event.LOCATION
+
+table.schedule-table-wrapper
+    thead
+        tr
+            each header in headers
+                th= header
+    tbody
+        each row in tbodyGrid
+            if row.hasShortEvent
+                tr(style="--schedule-body-each-item-height: 120px;")
+                    each cell in row.cells
+                        if cell.type === 'event'
+                            td(colspan=cell.colspan, rowspan="1")
+                                a(target="_blank", href=cell.data.URL)
+                                    if cell.colspan > 1
+                                        +eventCardMultiDay(cell.data)
+                                    else
+                                        +eventCardSingleDay(cell.data)
+                        else
+                            td(colspan=cell.colspan, rowspan="1")
+            else
+                tr
+                    each cell in row.cells
+                        if cell.type === 'event'
+                            td(colspan=cell.colspan, rowspan="1")
+                                a(target="_blank", href=cell.data.URL)
+                                    if cell.colspan > 1
+                                        +eventCardMultiDay(cell.data)
+                                    else
+                                        +eventCardSingleDay(cell.data)
+                        else
+                            td(colspan=cell.colspan, rowspan="1")
