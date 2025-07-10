@@ -4,4 +4,37 @@ window.addEventListener('DOMContentLoaded', () => {
             item.style.paddingRight = `${item.nextElementSibling.offsetWidth + 12}px`;
         })
     }, 2000);
-})
+
+    const stickyHeadWrapper = document.querySelector('.schedule-sticky-head-wrapper');
+
+    document.querySelector('.schedule-tables-wrapper').addEventListener('scroll', event => {
+        stickyHeadWrapper.scrollLeft = event.target.scrollLeft;
+    });
+
+
+    const theadMock = document.querySelector('.schedule-tables-mock-head-for-observer');
+    const tbodyMock = document.querySelector('.schedule-tables-mock-body-for-observer');
+
+    let isHeadMockVisible = false;
+    let isBodyMockVisible = false;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.target === theadMock)
+                isHeadMockVisible = entry.isIntersecting;
+            else if (entry.target === tbodyMock)
+                isBodyMockVisible = entry.isIntersecting;
+        });
+
+        console.log(isHeadMockVisible, isBodyMockVisible)
+
+        // stickyHeadWrapper.classList.toggle('display-none', isHeadMockVisible || !isBodyMockVisible)
+        stickyHeadWrapper.style.opacity = isHeadMockVisible || !isBodyMockVisible ? 0 : 1;
+    }, {
+        root: document.querySelector('.all-wrapper'),
+        threshold: 0
+    });
+
+    observer.observe(theadMock);
+    observer.observe(tbodyMock);
+});
