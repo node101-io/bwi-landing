@@ -3,7 +3,7 @@ import PublicGoogleSheetsParser from 'public-google-sheets-parser'
 import fs from 'fs/promises'
 
 const spreadsheetId = '1ARcVG_sNhWd4k5_LcIjiapKQoj0opMK_NwzAi92c99Y'
-const parser = new PublicGoogleSheetsParser(spreadsheetId, { useFormat: true })
+const parser = new PublicGoogleSheetsParser(spreadsheetId)
 
 const data = await parser.parse()
 
