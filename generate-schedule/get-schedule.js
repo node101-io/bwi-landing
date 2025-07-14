@@ -3,13 +3,13 @@ import PublicGoogleSheetsParser from 'public-google-sheets-parser'
 import fs from 'fs/promises'
 
 const spreadsheetId = '1ARcVG_sNhWd4k5_LcIjiapKQoj0opMK_NwzAi92c99Y'
-const parser = new PublicGoogleSheetsParser(spreadsheetId)
+const parser = new PublicGoogleSheetsParser(spreadsheetId, { useFormat: true })
 
 const data = await parser.parse()
 
 console.log(data)
 
-// Helper function to parse date strings like 'Date(2025,8,1)' 
+// Helper function to parse date strings like 'Date(2025,8,1)'
 // Note: In this Google Sheets data, months appear to be 0-indexed (8 = September)
 function parseDate(dateString) {
   const match = dateString.match(/Date\((\d+),(\d+),(\d+)\)/)
@@ -38,15 +38,15 @@ for (let i = 0; i < 21; i++) {
 const processedEvents = data.map(event => {
   const startDate = parseDate(event.START)
   const endDate = parseDate(event.END)
-  
+
   if (!startDate || !endDate) return null
-  
+
   // Calculate day offset from September 1, 2025
   const baseDate = new Date(2025, 8, 1) // September 1, 2025
   const startOffset = Math.floor((startDate - baseDate) / (1000 * 60 * 60 * 24))
   const endOffset = Math.floor((endDate - baseDate) / (1000 * 60 * 60 * 24))
   const colspan = Math.max(1, endOffset - startOffset + 1)
-  
+
   return {
     ...event,
     startOffset,
@@ -65,13 +65,13 @@ for (let row = 1; row <= maxRow; row++) {
   const rowEvents = processedEvents.filter(e => e.row === row)
   const gridRow = []
   let currentCol = 0
-  
+
   // Check if this row has any short events
   const hasShortEvent = rowEvents.some(event => event.isShort)
-  
+
   // Sort events by start offset for this row
   rowEvents.sort((a, b) => a.startOffset - b.startOffset)
-  
+
   for (const event of rowEvents) {
     // Add empty cells before the event if needed
     while (currentCol < event.startOffset) {
@@ -81,7 +81,7 @@ for (let row = 1; row <= maxRow; row++) {
       })
       currentCol++
     }
-    
+
     // Add the event cell
     gridRow.push({
       type: 'event',
@@ -90,7 +90,7 @@ for (let row = 1; row <= maxRow; row++) {
     })
     currentCol += event.colspan
   }
-  
+
   // Fill remaining columns with empty cells
   while (currentCol < 21) {
     gridRow.push({
@@ -99,14 +99,14 @@ for (let row = 1; row <= maxRow; row++) {
     })
     currentCol++
   }
-  
+
   tbodyGrid.push({
     cells: gridRow,
     hasShortEvent: hasShortEvent
   })
 }
 
-const schedule = pug.renderFile('schedule.pug', { 
+const schedule = pug.renderFile('schedule.pug', {
   headers,
   tbodyGrid
 })
